@@ -26,8 +26,8 @@
       <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+            <state relative-caret-position="50">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -574,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505345054979</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="handle disconnects">
+      <created>1505345793466</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1505345793466</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -631,7 +638,8 @@
     <MESSAGE value="try eventlet" />
     <MESSAGE value="refactor" />
     <MESSAGE value="spin out arg_parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="spin out arg_parser" />
+    <MESSAGE value="handle disconnects" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle disconnects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -763,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+        <state relative-caret-position="50">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>

@@ -21,7 +21,7 @@ filename = player.get_filename().split('/')[-1]
 
 
 def position_thread():
-    while True:
+    while connections > 0:
         socketio.sleep(1)
         pos = player.position()
         percentage = duration_percent * pos
@@ -29,6 +29,7 @@ def position_thread():
         socketio.emit('position',
                       {'position': pos, 'percentage': percentage},
                       namespace='/position')
+        print(pos)
 
 
 @app.route('/')
