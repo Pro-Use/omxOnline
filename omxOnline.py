@@ -96,7 +96,7 @@ def api_server(player, sync_ctl=None):
                                duration=duration_str)
 
     @socketio.on('connect', namespace='/position')
-    def test_connect():
+    def connect():
         global thread
         with thread_lock:
             if thread is None:
@@ -105,6 +105,7 @@ def api_server(player, sync_ctl=None):
     socketio.run(app, debug=True, host='0.0.0.0')
 
 if __name__ == '__main__':
+    time.sleep(2)
     DIRECTORY, FILES, SYNC, AUDIO = setup()
     print(DIRECTORY, FILES, SYNC, AUDIO)
     PLAYER = OMXPlayer(FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'])
