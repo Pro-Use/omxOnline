@@ -87,7 +87,7 @@ def api_server(player, sync_ctl=None):
     def eyetrack():
         filename = player.get_filename().split('/')[-1]
         duration = player.duration()
-        print('active: %s' % session['receive_count'])
+        print('active: %s' % session.get('receive_count', 0))
         return render_template('index.html', async_mode=socketio.async_mode,
                                filename=filename,
                                duration=duration)

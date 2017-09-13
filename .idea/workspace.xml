@@ -27,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="584">
-              <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+              <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -401,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505313656985</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="check sessions">
+      <created>1505316352535</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1505316352535</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -448,7 +455,8 @@
     <MESSAGE value="escape filenames" />
     <MESSAGE value="Add duration object" />
     <MESSAGE value="Add filename object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add filename object" />
+    <MESSAGE value="check sessions" />
+    <option name="LAST_COMMIT_MESSAGE" value="check sessions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -512,7 +520,7 @@
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
-          <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
