@@ -2,6 +2,7 @@ import sys
 import getopt
 import glob
 import os
+from re import escape
 from omxplayer import OMXPlayer
 from flask import Flask, render_template, session, request, jsonify, abort
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
@@ -12,6 +13,8 @@ from threading import Lock
 def setup():
     directory = "/home/pi/video/"
     files = glob.glob(directory + '[a-zA-Z0-9]*.*')
+    for f in range(0, len(files)):
+        files[f] = escape(files[f])
     sync = None
     audio = 'local'
     helpstr = '\nomxOnline usage:\n \
