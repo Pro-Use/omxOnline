@@ -73,7 +73,6 @@ def api_server(player, sync_ctl=None):
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secret!'
     socketio = SocketIO(app, async_mode='gevent')
-    thread = None
     thread_lock = Lock()
 
     def position_thread():
@@ -105,5 +104,6 @@ if __name__ == '__main__':
     DIRECTORY, FILES, SYNC, AUDIO = setup()
     print(DIRECTORY, FILES, SYNC, AUDIO)
     PLAYER = OMXPlayer(FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
+    thread = None
     api_server(PLAYER)
     PLAYER.stop()
