@@ -69,46 +69,45 @@ def setup_sync(sync, files):
                 sys.exit(2)
             # from omxsync import Broadcaster
 
+app = Flask(__name__)
+socketio = SocketIO(app, async_mode='eventlet')
+thread_lock = Lock()
+DIRECTORY, FILES, SYNC, AUDIO = setup()
+print(DIRECTORY, FILES, SYNC, AUDIO)
+PLAYER = OMXPlayer(FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'])
+thread = None
+duration = PLAYER.duration()
+duration_percent = 100 / duration
+duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
+filename = PLAYER.get_filename().split('/')[-1]
 
-def api_server(player, sync_ctl=None):
-    app = Flask(__name__)
-    socketio = SocketIO(app, async_mode='eventlet')
-    thread_lock = Lock()
-    duration = player.duration()
-    duration_percent = 100 / duration
-    duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
-    filename = player.get_filename().split('/')[-1]
 
-    def position_thread():
-        while True:
-            socketio.sleep(1)
-            pos = player.position()
-            percentage = duration_percent * pos
-            pos = time.strftime('%H:%M:%S', time.gmtime(pos))
-            socketio.emit('position',
-                          {'position': pos, 'percentage': percentage},
-                          namespace='/position')
+def position_thread():
+    while True:
+        socketio.sleep(1)
+        pos = PLAYER.position()
+        percentage = duration_percent * pos
+        pos = time.strftime('%H:%M:%S', time.gmtime(pos))
+        socketio.emit('position',
+                      {'position': pos, 'percentage': percentage},
+                      namespace='/position')
 
-    @app.route('/')
-    def index():
-        return render_template('index.html', async_mode=socketio.async_mode,
-                               filename=filename,
-                               duration=duration_str)
 
-    @socketio.on('connect', namespace='/position')
-    def connect():
-        global thread
-        with thread_lock:
-            if thread is None:
-                thread = socketio.start_background_task(target=position_thread)
+@app.route('/')
+def index():
+    return render_template('index.html', async_mode=socketio.async_mode,
+                           filename=filename,
+                           duration=duration_str)
 
-    socketio.run(app, debug=True, host='0.0.0.0')
+
+@socketio.on('connect', namespace='/position')
+def connect():
+    global thread
+    with thread_lock:
+        if thread is None:
+            thread = socketio.start_background_task(target=position_thread)
+
 
 if __name__ == '__main__':
-    time.sleep(2)
-    DIRECTORY, FILES, SYNC, AUDIO = setup()
-    print(DIRECTORY, FILES, SYNC, AUDIO)
-    PLAYER = OMXPlayer(FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'])
-    thread = None
-    api_server(PLAYER)
+    socketio.run(app, debug=True, host='0.0.0.0')
     PLAYER.stop()
