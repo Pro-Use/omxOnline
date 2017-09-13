@@ -79,8 +79,7 @@ if __name__ == '__main__':
     DIRECTORY, FILES, SYNC, AUDIO = setup()
     print(DIRECTORY, FILES, SYNC, AUDIO)
     # PLAYER = OMXPlayer(DIRECTORY + FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
-
-
+    api_server(None)
 
 
 
