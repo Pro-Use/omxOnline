@@ -81,16 +81,22 @@ def api_server(player, sync_ctl=None):
             socketio.sleep(1)
             socketio.emit('position',
                           {'position': player.position(), 'percentage': None},
-                          namespace='/test')
+                          namespace='/position')
 
     @app.route('/')
-    def eyetrack():
+    def index():
         filename = player.get_filename().split('/')[-1]
         duration = player.duration()
-        print('active: %s' % session.get('receive_count', 0))
         return render_template('index.html', async_mode=socketio.async_mode,
                                filename=filename,
                                duration=duration)
+
+    @socketio.on('connect', namespace='/position')
+    def test_connect():
+        global thread
+        with thread_lock:
+            if thread is None:
+                thread = socketio.start_background_task(target=position_thread)
 
     socketio.run(app, debug=True, host='0.0.0.0')
 
