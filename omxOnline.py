@@ -82,6 +82,7 @@ def api_server(player, sync_ctl=None):
             socketio.emit('position',
                           {'position': player.position(), 'percentage': None},
                           namespace='/position')
+            print(player.position())
 
     @app.route('/')
     def index():
