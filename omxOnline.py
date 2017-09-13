@@ -71,15 +71,14 @@ def api_server(player, sync_ctl=None):
 
     @app.route('/')
     def eyetrack():
-        return render_template('index.html', async_mode=socketio.async_mode)
+        return render_template('index.html', async_mode=socketio.async_mode,
+                               filename=player.get_filename())
 
     socketio.run(app, debug=True, host='0.0.0.0')
 
 if __name__ == '__main__':
     DIRECTORY, FILES, SYNC, AUDIO = setup()
     print(DIRECTORY, FILES, SYNC, AUDIO)
-    # PLAYER = OMXPlayer(DIRECTORY + FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
-    api_server(None)
-
-
-
+    PLAYER = OMXPlayer(DIRECTORY + FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
+    api_server(PLAYER)
+    PLAYER.stop()
