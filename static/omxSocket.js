@@ -8,5 +8,8 @@
 
     socket.on('position', function(msg) {
         console.log(msg.position);
-        $('#progress_bar').html(msg.position);
+        console.log(msg.percentage);
+        $('#position').html(msg.position);
+        $('#progress_bar').html(msg.percentage);
+
     });

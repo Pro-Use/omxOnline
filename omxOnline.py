@@ -2,6 +2,7 @@ import sys
 import getopt
 import glob
 import os
+import time
 from re import escape
 from omxplayer import OMXPlayer
 from flask import Flask, render_template, session, request, jsonify, abort
@@ -71,25 +72,28 @@ def setup_sync(sync, files):
 
 def api_server(player, sync_ctl=None):
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'secret!'
     socketio = SocketIO(app, async_mode='gevent')
     thread_lock = Lock()
+    duration = player.duration()
+    duration_percent = 100 / duration
+    duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
+    filename = player.get_filename().split('/')[-1]
 
     def position_thread():
         while True:
             socketio.sleep(1)
+            pos = player.position()
+            percentage = duration_percent * pos
+            pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             socketio.emit('position',
-                          {'position': player.position(), 'percentage': None},
+                          {'position': pos, 'percentage': percentage},
                           namespace='/position')
-            print(player.position())
 
     @app.route('/')
     def index():
-        filename = player.get_filename().split('/')[-1]
-        duration = player.duration()
         return render_template('index.html', async_mode=socketio.async_mode,
                                filename=filename,
-                               duration=duration)
+                               duration=duration_str)
 
     @socketio.on('connect', namespace='/position')
     def test_connect():
