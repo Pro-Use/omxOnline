@@ -9,10 +9,11 @@ from threading import Lock
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
+thread = None
 thread_lock = Lock()
+connections = 0
 directory, files, sync, audio = setup()
 player = OMXPlayer(files[0], args=['-o', audio, '--no-osd', '--loop'])
-thread = None
 duration = player.duration()
 duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
@@ -39,11 +40,18 @@ def index():
 
 @socketio.on('connect', namespace='/position')
 def connect():
-    global thread
+    global thread, connections
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(target=position_thread)
+    connections += 1
 
+
+@socketio.on('disconnect', namespace='/position')
+def test_disconnect():
+    global connections
+    connections -= 1
+    print('Client disconnected', request.sid)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
