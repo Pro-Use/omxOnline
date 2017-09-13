@@ -8,8 +8,9 @@
 
     socket.on('position', function(msg) {
         console.log(msg.position);
-        console.log(msg.percentage);
         $('#position').html(msg.position);
-        $('#progress_bar').html(msg.percentage);
+        var bar_width = ($( document ).width() / 100) * msg.percentage
+        console.log(bar_width);
+        $('#progress_bar').width(bar_width);
 
     });

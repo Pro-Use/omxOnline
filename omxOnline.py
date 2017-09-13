@@ -83,7 +83,7 @@ def api_server(player, sync_ctl=None):
         while True:
             socketio.sleep(1)
             pos = player.position()
-            percentage = duration_percent * pos
+            percentage = int(duration_percent * pos)
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             socketio.emit('position',
                           {'position': pos, 'percentage': percentage},
