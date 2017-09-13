@@ -11,7 +11,6 @@ app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
 thread = None
 thread_lock = Lock()
-connections = 0
 directory, files, sync, audio = setup()
 player = OMXPlayer(files[0], args=['-o', audio, '--no-osd', '--loop'])
 duration = player.duration()
@@ -21,7 +20,7 @@ filename = player.get_filename().split('/')[-1]
 
 
 def position_thread():
-    while connections > 0:
+    while True:
         socketio.sleep(1)
         pos = player.position()
         percentage = duration_percent * pos
@@ -29,7 +28,6 @@ def position_thread():
         socketio.emit('position',
                       {'position': pos, 'percentage': percentage},
                       namespace='/position')
-        print(pos)
 
 
 @app.route('/')
@@ -41,18 +39,11 @@ def index():
 
 @socketio.on('connect', namespace='/position')
 def connect():
-    global thread, connections
+    global thread
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(target=position_thread)
-    connections += 1
 
-
-@socketio.on('disconnect', namespace='/position')
-def test_disconnect():
-    global connections
-    connections -= 1
-    print('Client disconnected', request.sid)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
