@@ -61,7 +61,7 @@ def setup_sync(sync, files):
                 print('\ncannot sync multiple files,'
                       ' please specify a file or choose a different directory in order to sync\n')
                 sys.exit(2)
-             # from omxsync import Broadcaster
+            # from omxsync import Broadcaster
 
 
 def api_server(player, sync_ctl=None):
@@ -72,6 +72,8 @@ def api_server(player, sync_ctl=None):
     @app.route('/')
     def eyetrack():
         return render_template('index.html', async_mode=socketio.async_mode)
+
+    socketio.run(app, debug=True, host='0.0.0.0')
 
 if __name__ == '__main__':
     DIRECTORY, FILES, SYNC, AUDIO = setup()
