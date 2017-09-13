@@ -72,7 +72,7 @@ def setup_sync(sync, files):
 
 def api_server(player, sync_ctl=None):
     app = Flask(__name__)
-    socketio = SocketIO(app, async_mode='gevent')
+    socketio = SocketIO(app, async_mode='eventlet')
     thread_lock = Lock()
     duration = player.duration()
     duration_percent = 100 / duration
