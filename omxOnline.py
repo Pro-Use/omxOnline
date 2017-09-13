@@ -73,11 +73,21 @@ def api_server(player, sync_ctl=None):
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secret!'
     socketio = SocketIO(app, async_mode='gevent')
+    thread = None
+    thread_lock = Lock()
+
+    def position_thread():
+        while True:
+            socketio.sleep(1)
+            socketio.emit('position',
+                          {'position': player.position(), 'percentage': None},
+                          namespace='/test')
 
     @app.route('/')
     def eyetrack():
         filename = player.get_filename().split('/')[-1]
         duration = player.duration()
+        print('active: %s' % session['receive_count'])
         return render_template('index.html', async_mode=socketio.async_mode,
                                filename=filename,
                                duration=duration)
