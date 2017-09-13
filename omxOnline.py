@@ -76,8 +76,11 @@ def api_server(player, sync_ctl=None):
 
     @app.route('/')
     def eyetrack():
+        filename = player.get_filename().split('/')[0]
+        duration = player.duration()
         return render_template('index.html', async_mode=socketio.async_mode,
-                               filename=player.get_filename())
+                               filename=filename,
+                               duration=duration)
 
     socketio.run(app, debug=True, host='0.0.0.0')
 
