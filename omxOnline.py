@@ -13,13 +13,11 @@ from threading import Lock
 def setup():
     directory = "/home/pi/video/"
     files = glob.glob(directory + '[a-zA-Z0-9]*.*')
-    for f in range(0, len(files)):
-        files[f] = escape(files[f])
     sync = None
     audio = 'local'
     helpstr = '\nomxOnline usage:\n \
         -h print this help message and exit\n \
-        -f <file>\n \
+        -f <file>               full path\n \
         -d <directory> \n \
         -s [master | slave]     sync mode\n \
         -o [local | hdmi | alsa]    audio output\n'
@@ -37,12 +35,14 @@ def setup():
             if not os.path.exists(arg):
                 print('\n%s is not a valid directory\n' % arg)
                 sys.exit(2)
-            directory = arg
-            if directory[-1] != '/':
-                directory += '/'
+            if '-f' in opts:
+                print('\nDirectory and file both specified, ignoring directory %s\n' % arg)
+            else:
+                directory = arg
+                files = glob.glob(directory + '[a-zA-Z0-9]*.*')
         elif opt == '-f':
-            if not os.path.isfile(directory + arg):
-                print('\nCannot find file %s%s\n' % (directory, arg))
+            if not os.path.isfile(arg):
+                print('\nCannot find file %s\n' % arg)
                 sys.exit(2)
             files = [arg]
         elif opt == '-s':
@@ -55,6 +55,8 @@ def setup():
                 print('\n"%s" is not a valid audio output, must be either "local", "hdmi" or "alsa"\n' % arg)
                 sys.exit(2)
             audio = arg
+        for f in range(0, len(files)):
+            files[f] = escape(files[f])
     return directory, files, sync, audio
 
 
@@ -82,6 +84,6 @@ def api_server(player, sync_ctl=None):
 if __name__ == '__main__':
     DIRECTORY, FILES, SYNC, AUDIO = setup()
     print(DIRECTORY, FILES, SYNC, AUDIO)
-    PLAYER = OMXPlayer(DIRECTORY + FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
+    PLAYER = OMXPlayer(FILES[0], args=['-o', AUDIO, '--no-osd', '--loop'], pause=True)
     api_server(PLAYER)
     PLAYER.stop()
