@@ -18,9 +18,9 @@ $(document).ready(function() {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
             if (paused == false) {
-            $('#play_pause').html('<i class="material-icons">&#xE039;</i>');
-            } else {
             $('#play_pause').html('<i class="material-icons">&#xE036;</i>');
+            } else {
+            $('#play_pause').html('<i class="material-icons">&#xE039;</i>');
             }
         }
     });
