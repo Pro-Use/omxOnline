@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $('#play').click(function() {
         console.log('play')
-        var ctl_msg = {ctl: play}
+        var ctl_msg = {ctl: 'play'}
         socket.emit('ctl_event', ctl_msg);
         return false;
     });
