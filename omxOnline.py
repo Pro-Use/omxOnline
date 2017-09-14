@@ -51,6 +51,10 @@ def ctl_message(message):
     print(message)
 
 
+@socketio.on('disconnect', namespace='/omxSock')
+def test_disconnect():
+    print('Client disconnected', request.sid)
+
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
