@@ -2,7 +2,7 @@
 import time
 from argParser import setup
 from omxplayer import OMXPlayer
-from flask import Flask, render_template, session, request, jsonify, abort
+from flask import Flask, render_template, session, request, jsonify, abort, Markup
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
 from threading import Lock
@@ -38,10 +38,11 @@ def index():
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
         files_str += '<td> %s </td>\n' % get_file
+    files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
                            filename=filename,
                            duration=duration_str,
-                           files=files_str)
+                           files=files_html)
 
 
 @socketio.on('connect', namespace='/omxSock')
