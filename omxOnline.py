@@ -61,7 +61,7 @@ def ctl_message(message):
             player.set_position(12 - remaining)
         else:
             player.seek(10)
-        print(player.position())
+            print(player.position())
 
     elif message == 'skip_bwd':
         position = player.position()
