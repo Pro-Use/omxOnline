@@ -54,6 +54,20 @@ def ctl_message(message):
         player.play_pause()
         paused = not paused
 
+    elif message == 'skip_fwd':
+        remaining = player.duration() - player.position()
+        if remaining < 12:
+            player.set_position(12 - remaining)
+        else:
+            player.seek(10)
+
+    elif message == 'skip_bwd':
+        position = player.position()
+        if position < 12:
+            player.set_position(player.duration - (12 - position))
+        else:
+            player.seek(-10)
+
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
