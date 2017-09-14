@@ -14,10 +14,10 @@ $(document).ready(function() {
         $('#progress_bar').width(bar_width);
     });
 
-    $('#play').click(function() {
-        // console.log('play')
-        var ctl_msg = 'play'
-        socket.emit('ctl_event', ctl_msg);
+    $('button').click(function() {
+        console.log($(this).val())
+        socket.emit('ctl_event', $(this).val());
         return false;
     });
+
  });
