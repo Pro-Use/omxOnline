@@ -46,7 +46,7 @@ def connect():
             thread = socketio.start_background_task(target=position_thread)
 
 
-@socketio.on('my_event', namespace='/omxSock')
+@socketio.on('ctl_event', namespace='/omxSock')
 def ctl_message(message):
     print(message)
 
