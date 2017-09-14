@@ -68,7 +68,7 @@ def ctl_message(message):
         if position < 12:
             player.set_position(player.duration - (12 - position))
         else:
-            player.seek(-10)
+            player.set_position(player.position() - 10)
 
 
 @socketio.on('disconnect', namespace='/omxSock')
