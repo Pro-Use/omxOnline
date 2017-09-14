@@ -26,8 +26,8 @@
       <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+            <state relative-caret-position="464">
+              <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -359,13 +359,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00003" summary="First Commit">
-      <created>1505152545013</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1505152545013</updated>
     </task>
     <task id="LOCAL-00004" summary="Add initial args">
       <created>1505155690354</created>
@@ -703,7 +696,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505391261755</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="add skip button functions">
+      <created>1505392893929</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1505392893929</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -765,7 +765,8 @@
     <MESSAGE value="add play buttons" />
     <MESSAGE value="name receiver" />
     <MESSAGE value="update ctl buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ctl buttons" />
+    <MESSAGE value="add skip button functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="add skip button functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -906,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+        <state relative-caret-position="464">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
