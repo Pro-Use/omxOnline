@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
@@ -12,7 +12,6 @@
         var bar_width = ($( document ).width() / 100) * msg.percentage
         // console.log(bar_width);
         $('#progress_bar').width(bar_width);
-
     });
 
     $('#play').click(function() {
@@ -21,3 +20,4 @@
         socket.emit('ctl_event', ctl_msg);
         return false;
     });
+ });
