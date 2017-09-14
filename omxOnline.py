@@ -6,6 +6,7 @@ from flask import Flask, render_template, session, request, jsonify, abort
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
 from threading import Lock
+import glob
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -33,9 +34,14 @@ def position_thread():
 
 @app.route('/')
 def index():
+    files_str = ''
+    get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
+    for get_file in get_files:
+        files_str += '<td> %s </td>\n' % get_file
     return render_template('index.html', async_mode=socketio.async_mode,
                            filename=filename,
-                           duration=duration_str)
+                           duration=duration_str,
+                           files=files_str)
 
 
 @socketio.on('connect', namespace='/omxSock')

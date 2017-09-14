@@ -25,7 +25,7 @@ $(document).ready(function() {
         }
     });
 
-    $('button').click(function() {
+    $('.ctl-button').click(function() {
         console.log($(this).val())
         socket.emit('ctl_event', $(this).val());
         return false;
