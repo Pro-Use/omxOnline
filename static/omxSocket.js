@@ -2,7 +2,7 @@ $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
-    var paused = 'False'
+    var paused = false
 
     socket.on('connect', function() {
                 console.log('I\'m connected!');
@@ -17,7 +17,7 @@ $(document).ready(function() {
         if (paused != msg.paused) {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
-            if (paused == 'False') {
+            if (paused == false) {
             $('#play_pause').html('&#9654;');
             } else {
             $('#play_pause').html('&#9611;&#9611;');
