@@ -7,15 +7,17 @@
             });
 
     socket.on('position', function(msg) {
-        console.log(msg.position);
+        // console.log(msg.position);
         $('#position').html(msg.position);
         var bar_width = ($( document ).width() / 100) * msg.percentage
-        console.log(bar_width);
+        // console.log(bar_width);
         $('#progress_bar').width(bar_width);
 
     });
 
-    $('#play').click(function(event) {
-        socket.emit('ctl_event', {ctl: play});
+    $('#play').click(function() {
+        var ctl_msg = {ctl: play}
+        socket.emit('ctl_event', ctl_msg);
+        console.log(ctl_msg)
         return false;
     });
