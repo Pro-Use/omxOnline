@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/omxSocket.js" afterPath="$PROJECT_DIR$/static/omxSocket.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="omxOnline.iws" />
@@ -67,27 +68,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+            <state relative-caret-position="126">
+              <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#261#269#1" expanded="true" />
-                <element signature="e#326#333#1" expanded="true" />
-                <element signature="e#386#394#1" expanded="true" />
-                <element signature="e#465#473#1" expanded="true" />
+                <element signature="e#287#295#1" expanded="true" />
+                <element signature="e#382#390#1" expanded="true" />
+                <element signature="e#473#481#1" expanded="true" />
+                <element signature="e#556#564#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="396">
+              <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -110,11 +111,11 @@
       <list>
         <option value="$PROJECT_DIR$/APIserver.py" />
         <option value="$PROJECT_DIR$/argParser.py" />
-        <option value="$PROJECT_DIR$/static/omxSocket.js" />
         <option value="$PROJECT_DIR$/omxOnline.py" />
         <option value="$PROJECT_DIR$/static/style.css" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/static/omxSocket.js" />
       </list>
     </option>
   </component>
@@ -371,13 +372,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add filename object">
-      <created>1505313656985</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1505313656985</updated>
     </task>
     <task id="LOCAL-00013" summary="check sessions">
       <created>1505316352535</created>
@@ -715,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505395180728</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="add icon font">
+      <created>1505395370286</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1505395370286</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -809,10 +810,10 @@
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#261#269#1" expanded="true" />
-            <element signature="e#326#333#1" expanded="true" />
-            <element signature="e#386#394#1" expanded="true" />
-            <element signature="e#465#473#1" expanded="true" />
+            <element signature="e#287#295#1" expanded="true" />
+            <element signature="e#382#390#1" expanded="true" />
+            <element signature="e#473#481#1" expanded="true" />
+            <element signature="e#556#564#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -841,10 +842,10 @@
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#261#269#1" expanded="true" />
-            <element signature="e#326#333#1" expanded="true" />
-            <element signature="e#386#394#1" expanded="true" />
-            <element signature="e#465#473#1" expanded="true" />
+            <element signature="e#287#295#1" expanded="true" />
+            <element signature="e#382#390#1" expanded="true" />
+            <element signature="e#473#481#1" expanded="true" />
+            <element signature="e#556#564#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,14 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -926,15 +919,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        <state relative-caret-position="126">
+          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#261#269#1" expanded="true" />
-            <element signature="e#326#333#1" expanded="true" />
-            <element signature="e#386#394#1" expanded="true" />
-            <element signature="e#465#473#1" expanded="true" />
+            <element signature="e#287#295#1" expanded="true" />
+            <element signature="e#382#390#1" expanded="true" />
+            <element signature="e#473#481#1" expanded="true" />
+            <element signature="e#556#564#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
