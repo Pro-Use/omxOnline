@@ -2,6 +2,8 @@ $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
+    var paused = False
+
     socket.on('connect', function() {
                 console.log('I\'m connected!');
             });
@@ -12,6 +14,15 @@ $(document).ready(function() {
         var bar_width = ($( document ).width() / 100) * msg.percentage
         // console.log(bar_width);
         $('#progress_bar').width(bar_width);
+        if (paused != msg.paused) {
+            console.log('paused = ' + msg.paused)
+            paused = msg.paused
+            if (paused == False) {
+            $('#play_pause').html(&#9654;);
+            } else {
+            $('#play_pause').html(&#9611;&#9611;);
+            }
+        }
     });
 
     $('button').click(function() {

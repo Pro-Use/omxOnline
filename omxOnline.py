@@ -49,6 +49,10 @@ def connect():
 @socketio.on('ctl_event', namespace='/omxSock')
 def ctl_message(message):
     print(message)
+    if message == 'play_pause':
+        global paused
+        player.play_pause()
+        paused = not paused
 
 
 @socketio.on('disconnect', namespace='/omxSock')
