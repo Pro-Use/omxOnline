@@ -2,7 +2,7 @@ $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
-    var paused = False
+    var paused = 'False'
 
     socket.on('connect', function() {
                 console.log('I\'m connected!');
