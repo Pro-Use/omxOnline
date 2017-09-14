@@ -1,5 +1,5 @@
 
-    namespace = '/position';
+    namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
     socket.on('connect', function() {
@@ -13,4 +13,9 @@
         console.log(bar_width);
         $('#progress_bar').width(bar_width);
 
+    });
+
+    $('#play').click(function(event) {
+        socket.emit('ctl_event', {ctl: play});
+        return false;
     });

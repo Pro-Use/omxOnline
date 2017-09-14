@@ -17,6 +17,7 @@ duration = player.duration()
 duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
 filename = player.get_filename().split('/')[-1]
+paused = False
 
 
 def position_thread():
@@ -26,8 +27,8 @@ def position_thread():
         percentage = duration_percent * pos
         pos = time.strftime('%H:%M:%S', time.gmtime(pos))
         socketio.emit('position',
-                      {'position': pos, 'percentage': percentage},
-                      namespace='/position')
+                      {'position': pos, 'percentage': percentage, 'paused': paused},
+                      namespace='/omxSock')
 
 
 @app.route('/')
@@ -37,12 +38,17 @@ def index():
                            duration=duration_str)
 
 
-@socketio.on('connect', namespace='/position')
+@socketio.on('connect', namespace='/omxSock')
 def connect():
     global thread
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(target=position_thread)
+
+
+@socketio.on('my_event', namespace='/omxSock')
+def ctl_message(message):
+    print(message)
 
 
 if __name__ == '__main__':
