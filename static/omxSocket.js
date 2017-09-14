@@ -16,8 +16,8 @@
     });
 
     $('#play').click(function() {
+        console.log('play')
         var ctl_msg = {ctl: play}
         socket.emit('ctl_event', ctl_msg);
-        console.log(ctl_msg)
         return false;
     });
