@@ -26,8 +26,8 @@
       <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="236">
+              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -343,13 +343,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add omxSocket.js">
-      <created>1505336903453</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1505336903453</updated>
     </task>
     <task id="LOCAL-00019" summary="add omxSocket.js">
       <created>1505337364671</created>
@@ -687,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505409101209</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add file link">
+      <created>1505410465847</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1505410465847</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -725,7 +725,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add initial args" />
     <MESSAGE value="Add Flask Server" />
     <MESSAGE value="Run Flask Server" />
     <MESSAGE value="Add object to page" />
@@ -750,7 +749,8 @@
     <MESSAGE value="add skip button functions" />
     <MESSAGE value="add icon font" />
     <MESSAGE value="add files list" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files list" />
+    <MESSAGE value="add file link" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -901,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="236">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>

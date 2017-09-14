@@ -37,7 +37,7 @@ def index():
     files_str = ''
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
-        files_str += '<i class="material-icons">&#xE02C;</i><td> ' \
+        files_str += '<td><i class="material-icons">&#xE02C;</i> ' \
                      '<a class="new_file" value=%s>%s</a> ' \
                      '</td>\n' % (get_file, get_file)
     files_html = Markup(files_str)
