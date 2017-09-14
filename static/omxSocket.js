@@ -18,9 +18,9 @@ $(document).ready(function() {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
             if (paused == False) {
-            $('#play_pause').html(&#9654;);
+            $('#play_pause').html('&#9654;');
             } else {
-            $('#play_pause').html(&#9611;&#9611;);
+            $('#play_pause').html('&#9611;&#9611;');
             }
         }
     });
