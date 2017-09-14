@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/omxSocket.js" afterPath="$PROJECT_DIR$/static/omxSocket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="omxOnline.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,21 +57,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#284#291#1" expanded="true" />
-                <element signature="e#327#335#1" expanded="true" />
+                <element signature="e#241#249#1" expanded="true" />
+                <element signature="e#275#282#1" expanded="true" />
+                <element signature="e#312#320#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
@@ -99,9 +100,9 @@
         <option value="$PROJECT_DIR$/APIserver.py" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/argParser.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/omxOnline.py" />
         <option value="$PROJECT_DIR$/static/omxSocket.js" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -611,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505385037812</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="update ctl buttons">
+      <created>1505385638585</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1505385638585</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -672,7 +680,8 @@
     <MESSAGE value="stop emit thread" />
     <MESSAGE value="add play buttons" />
     <MESSAGE value="name receiver" />
-    <option name="LAST_COMMIT_MESSAGE" value="name receiver" />
+    <MESSAGE value="update ctl buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="update ctl buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -703,8 +712,9 @@
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#284#291#1" expanded="true" />
-            <element signature="e#327#335#1" expanded="true" />
+            <element signature="e#241#249#1" expanded="true" />
+            <element signature="e#275#282#1" expanded="true" />
+            <element signature="e#312#320#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -733,8 +743,9 @@
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#284#291#1" expanded="true" />
-            <element signature="e#327#335#1" expanded="true" />
+            <element signature="e#241#249#1" expanded="true" />
+            <element signature="e#275#282#1" expanded="true" />
+            <element signature="e#312#320#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,18 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#284#291#1" expanded="true" />
-            <element signature="e#327#335#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/argParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -815,6 +814,19 @@
         <state relative-caret-position="396">
           <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#241#249#1" expanded="true" />
+            <element signature="e#275#282#1" expanded="true" />
+            <element signature="e#312#320#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
