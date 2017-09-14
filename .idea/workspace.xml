@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omxOnline.py" afterPath="$PROJECT_DIR$/omxOnline.py" />
     </list>
     <ignored path="omxOnline.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -360,13 +359,6 @@
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
     </task>
-    <task id="LOCAL-00006" summary="Run Flask Server">
-      <created>1505304198571</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1505304198571</updated>
-    </task>
     <task id="LOCAL-00007" summary="Run Flask Server">
       <created>1505310738193</created>
       <option name="number" value="00007" />
@@ -703,7 +695,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505393558404</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add skip button functions">
+      <created>1505393766616</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1505393766616</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
