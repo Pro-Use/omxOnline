@@ -26,8 +26,8 @@
       <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+            <state relative-caret-position="500">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -359,13 +359,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add object to page">
-      <created>1505311716296</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1505311716296</updated>
     </task>
     <task id="LOCAL-00009" summary="escape filenames">
       <created>1505312356034</created>
@@ -703,7 +696,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505393771759</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="add skip button functions">
+      <created>1505393876120</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1505393876120</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -907,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+        <state relative-caret-position="500">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
