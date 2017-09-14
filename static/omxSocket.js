@@ -15,8 +15,8 @@ $(document).ready(function() {
     });
 
     $('#play').click(function() {
-        console.log('play')
-        var ctl_msg = {ctl: 'play'}
+        // console.log('play')
+        var ctl_msg = 'play'
         socket.emit('ctl_event', ctl_msg);
         return false;
     });
