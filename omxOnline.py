@@ -37,7 +37,7 @@ def index():
     files_str = ''
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
-        esc_file = get_file.replace(' ', '\ ')
+        esc_file = get_file.replace(' ', '///')
         files_str += '<td><button class="new-file" value=%s>' \
                      '<i class="material-icons">&#xE02C;</i>%s</button> ' \
                      '</td>\n' % (esc_file, get_file)
