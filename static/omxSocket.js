@@ -31,9 +31,10 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.new-file').click(function() {
-        console.log($(this).val())
-        socket.emit('file_event', $(this).val());
+    $('form#new-file').submit(function(event) {
+        console.log($('#file').val()
+        socket.emit('file_event', $('#file').val());
         return false;
     });
+
  });
