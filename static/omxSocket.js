@@ -1,8 +1,8 @@
 $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
-
     var paused = false
+    var new_file = ''
 
     socket.on('connect', function() {
                 console.log('I\'m connected!');
@@ -31,10 +31,9 @@ $(document).ready(function() {
         return false;
     });
 
-    $('form#new-file').submit(function(event) {
-        console.log($('#file').val())
-        socket.emit('file_event', $('#file').val());
+    $('.new-file').click(function() {
+        console.log($(this).val())
+        socket.emit('file_event', $(this).val());
         return false;
     });
-
  });
