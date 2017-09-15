@@ -38,9 +38,13 @@ def index():
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
         esc_file = get_file.replace(' ', '///')
-        files_str += '<td><button class="new-file" value=%s>' \
-                     '<i class="material-icons">&#xE02C;</i>%s</button> ' \
-                     '</td>\n' % (esc_file, get_file)
+        if get_file == files[0]:
+            checked = 'checked'
+        else:
+            checked = ''
+        files_str += '<td><i class="material-icons">&#xE02C;</i>'\
+                     '<input type="radio" name="file" value="%s %s"> ' \
+                     '</td>\n' % (get_file, checked)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
                            filename=filename,
@@ -82,7 +86,8 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    print(message)
+    new_file = message
+    print(new_file)
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
