@@ -37,8 +37,8 @@ def index():
     files_str = ''
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
-        files_str += '<td><i class="material-icons">&#xE02C;</i> ' \
-                     '<a class="new-file" value=%s>%s</a> ' \
+        files_str += '<td><button class="new-file" value=%s>' \
+                     '<i class="material-icons">&#xE02C;</i>%s</button> ' \
                      '</td>\n' % (get_file, get_file)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
