@@ -32,7 +32,7 @@ $(document).ready(function() {
     });
 
     $('form#new-file').submit(function(event) {
-        console.log($('#file').val()
+        console.log($('#file').val())
         socket.emit('file_event', $('#file').val());
         return false;
     });
