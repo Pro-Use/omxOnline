@@ -52,8 +52,7 @@ def setup():
             audio = arg
         for f in range(0, len(files)):
             files[f] = escape(files[f])
-        if len(files) > 1:
-            print('\ncannot sync multiple files,'
-                  ' please specify a file or choose a different directory in order to sync\n')
-            sys.exit(2)
+            files.sort()
+        if len(files) > 1 and sync:
+            print('\ncannot sync multiple files, looping %s\n' % files[0])
     return directory, files, sync, audio
