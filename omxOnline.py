@@ -43,7 +43,7 @@ def index():
         else:
             checked = ''
         files_str += '<td><i class="material-icons">&#xE02C;</i>'\
-                     '%s<input type="radio" name="file" value="%s" %s> ' \
+                     '%s<input type="radio" id="file" value="%s" %s> ' \
                      '</td>\n' % (get_file, get_file, checked)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
