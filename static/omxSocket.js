@@ -46,9 +46,9 @@ $(document).ready(function() {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
             if (paused == false) {
-            $('#play_pause').html('<i class="material-icons">&#xE037;</i>');
-            } else {
             $('#play_pause').html('<i class="material-icons">&#xE034;</i>');
+            } else {
+            $('#play_pause').html('<i class="material-icons">&#xE037;</i>');
             }
         }
     });

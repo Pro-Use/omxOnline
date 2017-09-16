@@ -50,7 +50,12 @@ def index():
                      '<i class="material-icons">&#xE02C;</i>%s' \
                      '</button></td></tr>\n' % (class_str, esc_file, get_file)
     files_html = Markup(files_str)
-    return render_template('index.html', async_mode=socketio.async_mode,
+    index_file = 'index.html'
+    if sync == 'slave':
+        index_file = 'index-slave.html'
+    elif sync == 'master':
+        index_file = 'index-master.html'
+    return render_template(index_file, async_mode=socketio.async_mode,
                            files=files_html)
 
 
