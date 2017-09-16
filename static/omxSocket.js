@@ -47,10 +47,13 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper').hover(function(e) {
+    $('#progress-wrapper'). mouseover(function(e) {
         console.log(e.pageX);
-        // $('#marker').css('left', e.pageX + 'px');
-        }, function(){
-        //$('#marker').css('left', '0px');
+        $('#marker').css('left', e.pageX + 'px');
     });
+
+    $('#progress-wrapper'). mouseleave(function() {
+        $('#marker').css('left', '0px');
+    });
+
  });
