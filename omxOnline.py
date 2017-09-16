@@ -13,7 +13,7 @@ app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
 thread = None
 thread_lock = Lock()
-directory, files, sync, audio, player = setup()
+directory, files, sync, audio, player, sync_ctl = setup()
 duration = player.duration()
 duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))

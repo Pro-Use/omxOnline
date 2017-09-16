@@ -2,9 +2,9 @@ import sys
 import getopt
 import glob
 import os
-from re import escape
 from omxplayer import OMXPlayer
 from mimetypes import guess_type
+from omxsync import Receiver, Broadcaster
 
 
 def setup():
@@ -74,4 +74,10 @@ def setup():
     if player is None:
         print('\nNo video to play in specified directory\n')
         sys.exit(2)
-    return directory, files, sync, audio, player
+    sync_ctl = None
+    if sync is 'slave':
+        sync_ctl = Receiver(player, verbose=True)
+    elif sync is 'master':
+        sync_ctl = Broadcaster(player, interval=0.5, verbose=True)
+
+    return directory, files, sync, audio, player, sync_ctl
