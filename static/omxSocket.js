@@ -9,15 +9,12 @@ $(document).ready(function() {
     var new_file = ''
     var new_pos = 0
 
-    var convertTime = function (frames, fps) {
-    fps = (typeof fps !== 'undefined' ?  fps : 30 );
+    var convertTime = function (seconds) {
     var pad = function(input) {return (input < 10) ? "0" + input : input;},
-        seconds = (typeof frames !== 'undefined' ?  frames / fps : 0 );
     return [
         pad(Math.floor(seconds / 3600)),
         pad(Math.floor(seconds % 3600 / 60)),
         pad(Math.floor(seconds % 60)),
-        pad(Math.floor(frames % fps))
         ].join(':');
     }
 
