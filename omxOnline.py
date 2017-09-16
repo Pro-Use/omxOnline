@@ -82,6 +82,13 @@ def ctl_message(message):
         else:
             player.set_position(player.position() - 10)
 
+    elif 'seek' in message:
+        seek_ctl = message.split(':')
+        new_pos = float(seek_ctl[1])
+        if new_pos > player.duration():
+            new_pos = 0
+        player.set_position(new_pos)
+
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):

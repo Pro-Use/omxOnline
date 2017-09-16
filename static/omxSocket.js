@@ -82,6 +82,7 @@ $(document).ready(function() {
 
     $('#progress-wrapper').click(function() {
         console.log(new_pos)
+        socket.emit('ctl_event', 'seek:' + new_pos);
         return false;
     });
 
