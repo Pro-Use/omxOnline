@@ -8,7 +8,7 @@ from threading import Lock
 import glob
 from dbus import DBusException
 from omxplayer import OMXPlayer
-import os
+from omxsync import Receiver, Broadcaster
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -42,7 +42,6 @@ def position_thread():
                            'percentage': percentage, 'paused': is_paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
         except DBusException:
-            print sync_ctl
             pass
 
 
@@ -116,7 +115,7 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    global player, duration, duration_percent, duration_str, filename
+    global player, duration, duration_percent, duration_str, filename, sync_ctl
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
@@ -124,6 +123,12 @@ def file_message(message):
         player.load(new_file)
     except SystemError:
         player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
+    sync_ctl.destroy()
+    if sync is not None:
+        if sync == 'slave':
+            sync_ctl = Receiver(player, verbose=False)
+        elif sync == 'master':
+            sync_ctl = Broadcaster(player, interval=0.5, verbose=False)
     duration = player.duration()
     duration_percent = 100 / duration
     duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
