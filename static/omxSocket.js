@@ -42,7 +42,7 @@ $(document).ready(function() {
             filename = msg.filename
             $('#filename').html(filename);
         }
-        if (msg.deviation != None) {
+        if (msg.deviation != false) {
             console.log(msg.deviation);
             $('#deviation').html(msg.deviation);
         }

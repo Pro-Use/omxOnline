@@ -19,7 +19,7 @@ duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
 filename = player.get_filename().split('/')[-1]
 paused = False
-deviation = None
+deviation = False
 
 
 def position_thread():
@@ -32,6 +32,7 @@ def position_thread():
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             if sync == 'slave':
                 deviation = sync_ctl.deviation
+                paused = not paused
             socketio.emit('position',
                           {'position': pos, 'duration': duration, 'duration_str': duration_str,
                            'percentage': percentage, 'paused': paused, 'filename': filename, 'deviation': deviation},
