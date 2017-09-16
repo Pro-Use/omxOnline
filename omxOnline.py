@@ -41,7 +41,8 @@ def position_thread():
                           {'position': pos, 'duration': duration, 'duration_str': duration_str,
                            'percentage': percentage, 'paused': is_paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
-        except DBusException:
+        except DBusException, msg:
+            print(msg)
             pass
 
 
