@@ -71,7 +71,11 @@ $(document).ready(function() {
         mouseX = e.pageX;
         $('#marker').css('left', (mouseX - 6) + 'px');
         $('#marker-pos').css('left', (mouseX - 6) + 'px');
-        new_pos = ((100 / $('#progress-wrapper').width()) * mouseX) * duration_pc
+        onepc = 100 / $('#progress-wrapper').width()
+        console.log('1%=' + onepc)
+        barpc = onepc * mouseX
+        console.log('bar%=' + barpc)
+        new_pos = barpc * duration_pc
         timeStamp = convertTime(new_pos);
         console.log(timeStamp);
         $('#marker-pos').text(timeStamp);
