@@ -60,14 +60,15 @@ def setup():
     for media_file in files:
         # esc_media_file = media_file
         mime_type = guess_type(media_file)
-        print mime_type
         if 'audio' or 'video' not in mime_type[0]:
+            print("'audio' or 'video' not in %s" % mime_type[0])
             files.remove(media_file)
         else:
             try:
                 player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'])
                 break
-            except SystemError:
+            except SystemError, msg:
+                print(msg)
                 files.remove(media_file)
     if player is None:
         print('\nNo video to play in specified directory\n')
