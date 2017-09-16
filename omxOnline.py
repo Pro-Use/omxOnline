@@ -25,7 +25,7 @@ deviation = False
 def position_thread():
     while True:
         try:
-            global deviation
+            global deviation, paused
             socketio.sleep(1)
             pos = player.position()
             percentage = duration_percent * pos
