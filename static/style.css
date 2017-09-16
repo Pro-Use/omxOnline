@@ -47,6 +47,7 @@
 #progress-wrapper {
     background-color: #c8e5ff;
     height: 50px;
+    margin-bottom: 40px;
 }
 
 #marker-pos {
@@ -68,8 +69,8 @@ div#file-buttons, div#console-button, div#power-button {
 }
 
 div#ctl-buttons {
-    border-bottom: 2px dotted #a5a5a5;
     margin-top: 10px;
+    background-color: #e2e2e2;
 }
 
 .sub-menu {
@@ -96,4 +97,8 @@ p.position {
 
 p.title {
     font-size: 30px;
+}
+
+table {
+    width: 100%;
 }
