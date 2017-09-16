@@ -11,6 +11,7 @@ $(document).ready(function() {
 
     var convertTime = function (seconds) {
     var pad = function(input) {return (input < 10) ? "0" + input : input;},
+        seconds = seconds;
     return [
         pad(Math.floor(seconds / 3600)),
         pad(Math.floor(seconds % 3600 / 60)),
