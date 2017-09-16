@@ -74,6 +74,11 @@ div#ctl-buttons {
     margin-bottom: 20px;
 }
 
+#deviation_str {
+    margin-top: -10px;
+    position: relative;
+}
+
 .sub-menu {
     display: none;
     margin-top: 20px;
