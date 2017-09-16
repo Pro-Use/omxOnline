@@ -3,7 +3,8 @@ import getopt
 import glob
 import os
 from re import escape
-
+from omxplayer import OMXPlayer
+from mimetypes import guess_type
 
 def setup():
     directory = "/home/pi/video/"
@@ -50,9 +51,22 @@ def setup():
                 print('\n"%s" is not a valid audio output, must be either "local", "hdmi" or "alsa"\n' % arg)
                 sys.exit(2)
             audio = arg
-        for f in range(0, len(files)):
-            files[f] = escape(files[f])
-            files.sort()
-        if len(files) > 1 and sync:
-            print('\ncannot sync multiple files, looping %s\n' % files[0])
-    return directory, files, sync, audio
+    files.sort()
+    print files
+    if len(files) > 1 and sync:
+        print('\ncannot sync multiple files, looping %s\n' % files[0])
+    player = None
+    for media_file in files:
+        # esc_media_file = media_file
+        if 'audio' or 'video' not in guess_type(media_file)[0]:
+            files.remove(media_file)
+        else:
+            try:
+                player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'])
+                break
+            except SystemError:
+                files.remove(media_file)
+    if player is None:
+        print('\nNo video to play in specified directory\n')
+        sys.exit(2)
+    return directory, files, sync, audio, player
