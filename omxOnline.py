@@ -81,7 +81,7 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    new_file = message.replace('///', '\ ')
+    new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
     try:
