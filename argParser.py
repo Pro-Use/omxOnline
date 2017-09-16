@@ -67,7 +67,7 @@ def setup():
     for media_file in files:
         print media_file
         # esc_media_file = media_file
-        mime_type = guess_type(media_file)
+        mime_type = guess_type(str(media_file))
         if any(f in str(mime_type[0]) for f in ['audio', 'video']):
             try:
                 player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'])
