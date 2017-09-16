@@ -1,20 +1,37 @@
 {% extends "layout.html" %}
 {% block body %}
 <!--BODY BLOCK-->
-    <span id="filename"></span><br>
-    <span id="position"></span> / <span id="duration_str"></span><br>
+    <p class='title'>Playing:<span id="filename"></span></p><br>
     <div id="progress-wrapper">
         <div style="height:50px;background-color:#2196F2" id="progress_bar"></div>
         <div id="marker"></div>
         <p id="marker-pos"></p>
     </div>
-    <button class="clt-button" value="skip_bwd"> <i class="material-icons">&#xE059;</i></button>
-    <button class="clt-button" value="play_pause"> <i class="material-icons">&#xE036;</i></button>
-    <button class="clt-button" value="skip_fwd"> <i class="material-icons">&#xE056;</i></button>
-    <button class="clt-button" value="stop"> <i class="material-icons">&#xE8AC;</i></button>
 
-    <table>
-            {{ files }}
-    </table>
+    <div id="ctl-buttons">
+        <button class="clt-button" value="skip_bwd"> <i class="material-icons">&#xE020;</i></button>
+        <button class="clt-button" value="play_pause"> <i class="material-icons">&#xE037;</i></button>
+        <button class="clt-button" value="skip_fwd"> <i class="material-icons">&#xE01F;</i></button>
+        <p class="position"><span id="position"></span> / <span id="duration_str"></span></p>
+    </div>
+    <div id="file-buttons">
+        <button class="folder-button"><i class="material-icons">&#xE2C7;</i></button>
+        <button class="usb-button"><i class="material-icons">&#xE1E0;</i></button>
+    </div>
+    <div id="console-button">
+        <button class="console-button"><i class="material-icons">&#xE002;</i></button>
+    </div>
+    <div id="power-button">
+        <button class="clt-button" value="stop"> <i class="material-icons">&#xE8AC;</i></button>
+    </div>
+    <div id="local-files">
+        <table>
+                {{ files }}
+        </table>
+    </div>
+        <div id="usb-files">
+        <table>
+        </table>
+    </div>
 <!--END BODY-->
 {% endblock %}
