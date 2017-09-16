@@ -42,9 +42,9 @@ def index():
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
         esc_file = get_file.replace(' ', '///')
-        files_str += '<td><i class="material-icons">&#xE02C;</i>%s' \
+        files_str += '<tr><td><i class="material-icons">&#xE02C;</i>%s' \
                      '<button class="new-file" value=%s>open</button> ' \
-                     '</td>\n' % (get_file, esc_file)
+                     '</td></tr>\n' % (get_file, esc_file)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
                            files=files_html)
@@ -52,6 +52,7 @@ def index():
 
 @socketio.on('connect', namespace='/omxSock')
 def connect():
+    print('Client connected', request.sid)
     global thread
     with thread_lock:
         if thread is None:
