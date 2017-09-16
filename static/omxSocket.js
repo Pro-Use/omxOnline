@@ -47,8 +47,10 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper').click(function(e) {
+    $('#progress-wrapper').hover(function(e) {
         console.log(e.pageX);
-        return false;
+        $('#marker').css('left', e.pageX + 'px');
+        }, function(){
+        $('#marker').css('left', '0px');
     });
  });
