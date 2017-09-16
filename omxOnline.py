@@ -31,7 +31,7 @@ def position_thread():
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             if sync == 'slave':
-                deviation = sync_ctl.deviation()
+                deviation = sync_ctl.deviation
             socketio.emit('position',
                           {'position': pos, 'duration': duration, 'duration_str': duration_str,
                            'percentage': percentage, 'paused': paused, 'filename': filename, 'deviation': deviation},
