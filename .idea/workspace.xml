@@ -86,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="632">
-              <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+              <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -370,13 +370,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add file link function">
-      <created>1505471897947</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1505471897947</updated>
     </task>
     <task id="LOCAL-00072" summary="add file link function">
       <created>1505472178747</created>
@@ -714,7 +707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505593951239</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Styling">
+      <created>1505594047844</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1505594047844</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1063,7 +1063,7 @@
     <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="632">
-          <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding />
         </state>
       </provider>
