@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/omxSocket.js" afterPath="$PROJECT_DIR$/static/omxSocket.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/style.css" afterPath="$PROJECT_DIR$/static/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
@@ -59,17 +60,16 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="504">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#425#433#1" expanded="true" />
                 <element signature="e#528#536#1" expanded="true" />
                 <element signature="e#629#637#1" expanded="true" />
-                <element signature="e#848#856#1" expanded="true" />
-                <element signature="e#931#939#1" expanded="true" />
-                <element signature="e#1059#1067#1" expanded="true" />
-                <element signature="e#1195#1203#1" expanded="true" />
+                <element signature="e#864#872#1" expanded="true" />
+                <element signature="e#1004#1012#1" expanded="true" />
+                <element signature="e#1146#1154#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,8 +78,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="818">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state relative-caret-position="548">
+              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -88,8 +88,8 @@
       <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+            <state relative-caret-position="313">
+              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/argParser.py" />
         <option value="$PROJECT_DIR$/omxOnline.py" />
-        <option value="$PROJECT_DIR$/static/omxSocket.js" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/static/omxSocket.js" />
         <option value="$PROJECT_DIR$/static/style.css" />
       </list>
     </option>
@@ -373,13 +373,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00066" summary="add files list">
-      <created>1505409101209</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1505409101209</updated>
     </task>
     <task id="LOCAL-00067" summary="add file link">
       <created>1505410465847</created>
@@ -717,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505590954693</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Styling">
+      <created>1505591325614</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1505591325614</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -829,10 +829,9 @@
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -872,10 +871,9 @@
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -915,10 +913,9 @@
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -950,10 +947,9 @@
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -985,10 +981,9 @@
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1052,33 +1047,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+        <state relative-caret-position="313">
+          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="504">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#425#433#1" expanded="true" />
             <element signature="e#528#536#1" expanded="true" />
             <element signature="e#629#637#1" expanded="true" />
-            <element signature="e#848#856#1" expanded="true" />
-            <element signature="e#931#939#1" expanded="true" />
-            <element signature="e#1059#1067#1" expanded="true" />
-            <element signature="e#1195#1203#1" expanded="true" />
+            <element signature="e#864#872#1" expanded="true" />
+            <element signature="e#1004#1012#1" expanded="true" />
+            <element signature="e#1146#1154#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="548">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
           <folding />
         </state>
       </provider>

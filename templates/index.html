@@ -14,23 +14,28 @@
         <button class="ctl-button" value="skip_fwd"> <i class="material-icons">&#xE01F;</i></button>
         <p class="position"><span id="position"></span> / <span id="duration_str"></span></p>
     </div>
+
     <div id="file-buttons">
-        <button class="folder-button"><i class="material-icons">&#xE2C7;</i></button>
-        <button class="usb-button"><i class="material-icons">&#xE1E0;</i></button>
+        <button class="sub-button" value="file-menu"><i class="material-icons">&#xE2C7;</i></button>
     </div>
     <div id="console-button">
-        <button class="console-button"><i class="material-icons">&#xE002;</i></button>
+        <button class="sub-button" value="console"><i class="material-icons">&#xE002;</i></button>
     </div>
     <div id="power-button">
-        <button class="clt-button" value="stop"> <i class="material-icons">&#xE8AC;</i></button>
+        <button class="sub-button" value="power-menu"> <i class="material-icons">&#xE8AC;</i></button>
     </div>
     <br>
-    <div id="local-files">
+<!--sub-menus-->
+    <div id="file-menu" class="sub-menu">
         <table>
                 {{ files }}
         </table>
     </div>
-        <div id="usb-files">
+    <div id="console"  class="sub-menu">
+        <table>
+        </table>
+    </div>
+    <div id="power-menu"  class="sub-menu">
         <table>
         </table>
     </div>

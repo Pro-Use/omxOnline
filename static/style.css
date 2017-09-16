@@ -72,6 +72,10 @@ div#ctl-buttons {
     margin-top: 10px;
 }
 
+.sub-menu {
+    display: none;
+}
+
 br {
     clear: both;
 }

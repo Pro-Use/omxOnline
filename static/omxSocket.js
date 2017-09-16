@@ -65,6 +65,13 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.sub-button').click(function() {
+        console.log($(this).val())
+        $(".sub-menu").css('display', 'none')
+        $("#" + $(this).val()).css('display', 'block')
+        return false;
+    });
+
     $('#progress-wrapper').mousemove(function(e) {
         mouseX = e.pageX;
         if (mouseX > $('#progress-wrapper').width() / 2) {
