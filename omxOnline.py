@@ -9,6 +9,7 @@ import glob
 from dbus import DBusException
 from omxplayer import OMXPlayer
 from omxsync import Receiver, Broadcaster
+import os
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -112,6 +113,12 @@ def ctl_message(message):
         if new_pos > player.duration():
             new_pos = 0
         player.set_position(new_pos)
+
+    elif message == 'power_off':
+        os.system('systemctl poweroff')
+
+    elif message == 'restart':
+        os.system('reboot')
 
 
 @socketio.on('file_event', namespace='/omxSock')
