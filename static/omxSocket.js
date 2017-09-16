@@ -67,9 +67,9 @@ $(document).ready(function() {
 
     $('.sub-button').click(function() {
         console.log($(this).val());
-        var was-open = String($("#" + $(this).val()).css('display'));
+        var open = $("#" + $(this).val()).css('display');
         $(".sub-menu").css('display', 'none');
-        if (was-open == 'none') {
+        if (open == 'none') {
             $("#" + $(this).val()).css('display', 'block');
         }
         return false;
