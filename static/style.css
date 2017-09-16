@@ -44,7 +44,14 @@
     left: 0px;
 }
 
-div#progress-wrapper {
+#progress-wrapper {
     background-color: #c8e5ff;
     height: 50px;
+}
+
+#marker-pos {
+    display: none;
+    position: relative;
+    top: -100px;
+    padding-left: 10px;
 }

@@ -6,6 +6,19 @@ $(document).ready(function() {
     var filename = ''
     var new_file = ''
 
+    var convertTime = function (frames, fps) {
+    fps = (typeof fps !== 'undefined' ?  fps : 30 );
+    var pad = function(input) {return (input < 10) ? "0" + input : input;},
+        seconds = (typeof frames !== 'undefined' ?  frames / fps : 0 );
+    return [
+        pad(Math.floor(seconds / 3600)),
+        pad(Math.floor(seconds % 3600 / 60)),
+        pad(Math.floor(seconds % 60)),
+        pad(Math.floor(frames % fps))
+        ].join(':');
+    }
+
+
     socket.on('connect', function() {
                 console.log('I\'m connected!');
             });
@@ -50,11 +63,13 @@ $(document).ready(function() {
     $('#progress-wrapper'). mousemove(function(e) {
         $('#marker').css('left', (e.pageX - 6) + 'px');
         $('#marker-pos').css('left', (e.pageX - 6) + 'px');
+        $('#marker-pos').text(convertTime(e.pageX));
     });
 
     $('#progress-wrapper'). mouseleave(function() {
         $('#marker').css('left', '-3px');
         $('#marker-pos').css('left', '-3px');
+        $('#marker-pos').text('');
     });
 
  });
