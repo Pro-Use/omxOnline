@@ -46,9 +46,8 @@ def position_thread():
 
 
 def write_config(arg, value):
-    if os.path.isfile(config_file):
-        with open(config_file, 'w') as config:
-            config.write('%s %s\n' % (arg, value))
+    with open(config_file, 'w+') as config:
+        config.write('%s %s\n' % (arg, value))
 
 
 @app.route('/')
