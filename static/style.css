@@ -56,7 +56,15 @@
     width: 100px
 }
 
-button.clt-button {
-    background-color: white;
+button.clt-button, button.new-file {
+    background: none;
     border: none;
+}
+
+td.not-playing {
+    background-color: #e2e2e2;
+}
+
+td.playing {
+    border-bottom-color: #9a9a9a;
 }

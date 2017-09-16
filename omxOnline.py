@@ -42,9 +42,9 @@ def index():
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
         if get_file == player.get_filename():
-            class_str = 'not-playing'
-        else:
             class_str = 'playing'
+        else:
+            class_str = 'not-playing'
         esc_file = get_file.replace(' ', '///')
         files_str += '<tr><td class=%s><button class="new-file" value=%s>' \
                      '<i class="material-icons">&#xE02C;</i>%s' \
