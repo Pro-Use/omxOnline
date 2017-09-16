@@ -45,7 +45,7 @@ $(document).ready(function() {
         if (paused != msg.paused) {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
-            if (msg.paused == false) {
+            if (msg.paused == 'false') {
             $('#play_pause').html('<i class="material-icons">&#xE037;</i>');
             } else {
             $('#play_pause').html('<i class="material-icons">&#xE034;</i>');
