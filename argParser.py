@@ -54,19 +54,19 @@ def setup():
             audio = arg
     files.sort()
     print files
-    if len(files) > 1 and sync:
-        print('\ncannot sync multiple files, looping %s\n' % files[0])
     config_file = '/home/pi/.omxOnline.config'
     if os.path.isfile(config_file):
         with open(config_file, 'r') as config:
             for line in config:
                 if 'FILE' in line:
-                    files = [line.replace('FILE ', '')]
+                    files = [line.replace('\n', '').replace('FILE ', '')]
+    if len(files) > 1 and sync:
+        print('\ncannot sync multiple files, looping %s\n' % files[0])
     player = None
     for media_file in files:
         print media_file
         # esc_media_file = media_file
-        mime_type = guess_type(str(media_file))
+        mime_type = guess_type(media_file)
         print mime_type
         if any(f in str(mime_type[0]) for f in ['audio', 'video']):
             try:
