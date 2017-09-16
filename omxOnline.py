@@ -42,6 +42,7 @@ def position_thread():
                            'percentage': percentage, 'paused': is_paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
         except DBusException:
+            print sync_ctl
             pass
 
 
