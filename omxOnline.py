@@ -86,7 +86,6 @@ def file_message(message):
     playing = player.get_filename()
     try:
         player.load(new_file)
-        return
     except SystemError:
         player.load(playing)
 
