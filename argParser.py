@@ -60,7 +60,7 @@ def setup():
     for media_file in files:
         # esc_media_file = media_file
         mime_type = guess_type(media_file)
-        if any(f in mime_type[0] for f in ['audio', 'video']):
+        if any(f in str(mime_type[0]) for f in ['audio', 'video']):
             print("'audio' or 'video' not in %s" % mime_type[0])
             files.remove(media_file)
         else:
