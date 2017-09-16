@@ -49,8 +49,8 @@ $(document).ready(function() {
 
     $('#progress-wrapper').hover(function(e) {
         console.log(e.pageX);
-        $('#marker').css('left', e.pageX + 'px');
+        // $('#marker').css('left', e.pageX + 'px');
         }, function(){
-        $('#marker').css('left', '0px');
+        //$('#marker').css('left', '0px');
     });
  });
