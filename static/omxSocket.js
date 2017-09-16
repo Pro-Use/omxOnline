@@ -46,4 +46,9 @@ $(document).ready(function() {
         socket.emit('file_event', $(this).val());
         return false;
     });
+
+    $('#progress-wrapper').click(function() {
+        console.log(event.pageX)
+        return false;
+    });
  });
