@@ -64,6 +64,12 @@ button.clt-button, button.new-file, button.folder-button, button.usb-button, but
 div#file-buttons, div#console-button, div#power-button {
     float: left;
     margin-right: 40px;
+    margin-top: 10px;
+}
+
+div#ctl-buttons {
+    border-bottom: 2px dotted #a5a5a5;
+    margin-top: 10px;
 }
 
 br {
