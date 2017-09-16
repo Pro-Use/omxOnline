@@ -123,12 +123,12 @@ def file_message(message):
         player.load(new_file)
     except SystemError:
         player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
-    sync_ctl.destroy()
-    if sync is not None:
-        if sync == 'slave':
-            sync_ctl = Receiver(player, verbose=False)
-        elif sync == 'master':
-            sync_ctl = Broadcaster(player, interval=0.5, verbose=False)
+    # sync_ctl.destroy()
+    # if sync is not None:
+    #     if sync == 'slave':
+    #         sync_ctl = Receiver(player, verbose=False)
+    #     elif sync == 'master':
+    #         sync_ctl = Broadcaster(player, interval=0.5, verbose=False)
     duration = player.duration()
     duration_percent = 100 / duration
     duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
