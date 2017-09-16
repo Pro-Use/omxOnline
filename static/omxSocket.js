@@ -48,12 +48,13 @@ $(document).ready(function() {
     });
 
     $('#progress-wrapper'). mousemove(function(e) {
-        console.log(e.pageX);
         $('#marker').css('left', (e.pageX - 6) + 'px');
+        $('#marker-pos').css('left', (e.pageX - 6) + 'px');
     });
 
     $('#progress-wrapper'). mouseleave(function() {
         $('#marker').css('left', '-3px');
+        $('#marker-pos').css('left', '-3px');
     });
 
  });
