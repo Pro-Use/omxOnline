@@ -75,9 +75,9 @@ def setup():
         print('\nNo video to play in specified directory\n')
         sys.exit(2)
     sync_ctl = None
-    if sync is 'slave':
+    if sync == 'slave':
         sync_ctl = Receiver(player, verbose=True)
-    elif sync is 'master':
+    elif sync == 'master':
         sync_ctl = Broadcaster(player, interval=0.5, verbose=True)
-
+    print('%s is sync control' % sync_ctl)
     return directory, files, sync, audio, player, sync_ctl
