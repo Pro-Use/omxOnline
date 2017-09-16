@@ -29,8 +29,8 @@ def position_thread():
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             socketio.emit('position',
-                          {'position': pos, 'duration': duration_str, 'percentage': percentage, 'paused': paused,
-                           'filename': filename},
+                          {'position': pos, 'duration': duration, 'duration_str': duration_str,
+                           'percentage': percentage, 'paused': paused, 'filename': filename},
                           namespace='/omxSock')
         except DBusException:
             pass

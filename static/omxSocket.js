@@ -3,8 +3,11 @@ $(document).ready(function() {
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
     var paused = false
     var duration = ''
+    var duration_str = 0
+    var duration_pc = 0
     var filename = ''
     var new_file = ''
+    var new_pos = 0
 
     var convertTime = function (frames, fps) {
     fps = (typeof fps !== 'undefined' ?  fps : 30 );
@@ -31,7 +34,11 @@ $(document).ready(function() {
         $('#progress_bar').width(bar_width);
         if (msg.duration != duration) {
             duration = msg.duration
-            $('#duration').html(duration);
+            duration_pc = msg.duration / 100
+        }
+        if (msg.duration_str != duration_str) {
+            duration_str = msg.duration_str
+            $('#duration_str').html(duration_str);
         }
         if (msg.filename != filename) {
             filename = msg.filename
@@ -64,7 +71,8 @@ $(document).ready(function() {
         mouseX = e.pageX;
         $('#marker').css('left', (mouseX - 6) + 'px');
         $('#marker-pos').css('left', (mouseX - 6) + 'px');
-        timeStamp = convertTime(mouseX);
+        new_pos = ((100 / $('#progress-wrapper').width()) * mouseX) * duration_pc
+        timeStamp = convertTime(new_pos);
         console.log(timeStamp);
         $('#marker-pos').text(timeStamp);
     });

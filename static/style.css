@@ -50,8 +50,8 @@
 }
 
 #marker-pos {
-    display: none;
     position: relative;
     top: -100px;
     padding-left: 10px;
+    width: 100px
 }
