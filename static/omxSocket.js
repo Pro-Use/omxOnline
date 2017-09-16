@@ -47,8 +47,8 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper').click(function() {
-        console.log(event.pageX)
+    $('#progress-wrapper').click(function(e) {
+        console.log(e.pageX);
         return false;
     });
  });
