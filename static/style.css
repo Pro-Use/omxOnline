@@ -60,17 +60,18 @@
 button.ctl-button, button.new-file, button.sub-button {
     background: none;
     border: none;
+    margin-right: 40px;
 }
 
 div#file-buttons, div#console-button, div#power-button {
     float: left;
-    margin-right: 40px;
     margin-top: 10px;
 }
 
 div#ctl-buttons {
     margin-top: 10px;
     background-color: #e2e2e2;
+    margin-bottom: 20px;
 }
 
 .sub-menu {
