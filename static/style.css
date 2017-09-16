@@ -56,7 +56,7 @@
     width: 100px
 }
 
-button.clt-button, button.new-file, button.folder-button, button.usb-button, button.console-button {
+button.ctl-button, button.new-file, button.folder-button, button.usb-button, button.console-button {
     background: none;
     border: none;
 }
@@ -87,4 +87,8 @@ td.playing {
 p.position {
     float: right;
     padding-right: 10px;
+}
+
+p.title {
+    font-size: 30px;
 }
