@@ -42,6 +42,10 @@ $(document).ready(function() {
             filename = msg.filename
             $('#filename').html(filename);
         }
+        if (msg.deviation != None) {
+            console.log(msg.deviation);
+            $('#deviation').html(msg.deviation);
+        }
         if (paused != msg.paused) {
             console.log('paused = ' + msg.paused)
             paused = msg.paused
