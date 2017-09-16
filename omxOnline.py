@@ -19,10 +19,11 @@ duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
 filename = player.get_filename().split('/')[-1]
 paused = False
+connections = []
 
 
 def position_thread():
-    while True:
+    while len(connections) > 0:
         try:
             socketio.sleep(1)
             pos = player.position()
@@ -52,8 +53,8 @@ def index():
 
 @socketio.on('connect', namespace='/omxSock')
 def connect():
-    print('Client connected', request.sid)
-    global thread
+    global connections, thread
+    connections.append(request.sid)
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(target=position_thread)
@@ -102,7 +103,8 @@ def file_message(message):
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
-    print('Client disconnected', request.sid)
+    global connections
+    connections.remove(request.sid)
 
 
 if __name__ == '__main__':
