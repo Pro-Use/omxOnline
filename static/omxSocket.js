@@ -65,18 +65,24 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper'). mousemove(function(e) {
+    $('#progress-wrapper').mousemove(function(e) {
         mouseX = e.pageX;
-        $('#marker').css('left', (mouseX - 6) + 'px');
-        $('#marker-pos').css('left', (mouseX - 6) + 'px');
-        onepc = 100 / $('#progress-wrapper').width()
-        console.log('1%=' + onepc)
-        barpc = onepc * mouseX
-        console.log('bar%=' + barpc)
-        new_pos = barpc * duration_pc
+        if (mouseX > $('#progress-wrapper').width() / 2) {
+            $('#marker-pos').css('margin-left', '-80px');
+        } else {
+            $('#marker-pos').css('margin-left', '10px');
+        }
+        $('#marker').css('left', (mouseX - 8) + 'px');
+        $('#marker-pos').css('left', (mouseX - 8) + 'px');
+        new_pos = ((100 / $('#progress-wrapper').width()) * mouseX) * duration_pc
         timeStamp = convertTime(new_pos);
-        console.log(timeStamp);
+        //console.log(timeStamp);
         $('#marker-pos').text(timeStamp);
+    });
+
+    $('#progress-wrapper').click(function() {
+        console.log(new_pos)
+        return false;
     });
 
     $('#progress-wrapper'). mouseleave(function() {
