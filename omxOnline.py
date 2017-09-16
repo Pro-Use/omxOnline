@@ -6,6 +6,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
 from threading import Lock
 import glob
+from dbus import DBusException
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -21,13 +22,16 @@ paused = False
 
 def position_thread():
     while True:
-        socketio.sleep(1)
-        pos = player.position()
-        percentage = duration_percent * pos
-        pos = time.strftime('%H:%M:%S', time.gmtime(pos))
-        socketio.emit('position',
-                      {'position': pos, 'percentage': percentage, 'paused': paused},
-                      namespace='/omxSock')
+        try:
+            socketio.sleep(1)
+            pos = player.position()
+            percentage = duration_percent * pos
+            pos = time.strftime('%H:%M:%S', time.gmtime(pos))
+            socketio.emit('position',
+                          {'position': pos, 'percentage': percentage, 'paused': paused},
+                          namespace='/omxSock')
+        except DBusException:
+            pass
 
 
 @app.route('/')

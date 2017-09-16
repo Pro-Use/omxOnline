@@ -26,8 +26,8 @@
       <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="87" column="29" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+            <state relative-caret-position="612">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -357,13 +357,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00035" summary="add play buttons">
-      <created>1505384526468</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1505384526469</updated>
     </task>
     <task id="LOCAL-00036" summary="name receiver">
       <created>1505385037812</created>
@@ -701,7 +694,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505573383444</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="handle file errors">
+      <created>1505574235094</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1505574235095</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1014,8 +1014,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/omxOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="87" column="29" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+        <state relative-caret-position="612">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
