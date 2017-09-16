@@ -1,7 +1,6 @@
 
 import time
 from argParser import setup
-from omxplayer import OMXPlayer
 from flask import Flask, render_template, session, request, jsonify, abort, Markup
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
@@ -12,8 +11,7 @@ app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
 thread = None
 thread_lock = Lock()
-directory, files, sync, audio = setup()
-player = OMXPlayer(files[0], args=['-o', audio, '--no-osd', '--loop'])
+directory, files, sync, audio, player = setup()
 duration = player.duration()
 duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
@@ -80,10 +78,18 @@ def ctl_message(message):
         else:
             player.set_position(player.position() - 10)
 
+
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
     new_file = message.replace('///', '\ ')
     print(new_file)
+    playing = player.get_filename()
+    try:
+        player.load(new_file)
+        return
+    except SystemError:
+        player.load(playing)
+
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
