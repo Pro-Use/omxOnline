@@ -47,13 +47,13 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper'). mouseover(function(e) {
+    $('#progress-wrapper'). mousemove(function(e) {
         console.log(e.pageX);
         $('#marker').css('left', e.pageX + 'px');
     });
 
     $('#progress-wrapper'). mouseleave(function() {
-        $('#marker').css('left', '0px');
+        $('#marker').css('left', '-3px');
     });
 
  });
