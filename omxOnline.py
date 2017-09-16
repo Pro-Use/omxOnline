@@ -1,8 +1,6 @@
 
 import time
-import sys
-from argParser import setup, check_video
-from omxplayer import OMXPlayer
+from argParser import setup
 from flask import Flask, render_template, session, request, jsonify, abort, Markup
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
@@ -83,16 +81,15 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    print(message)
+    new_file = message.replace('///', '\ ')
+    print(new_file)
     playing = player.get_filename()
     try:
-        player.load(message)
+        player.load(new_file)
         return
     except SystemError:
         player.load(playing)
 
-    new_file = message.replace('///', '\ ')
-    print(new_file)
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
