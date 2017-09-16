@@ -1,8 +1,8 @@
 $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
-
     var paused = false
+    var new_file = ''
 
     socket.on('connect', function() {
                 console.log('I\'m connected!');

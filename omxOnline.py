@@ -38,9 +38,9 @@ def index():
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
         esc_file = get_file.replace(' ', '///')
-        files_str += '<td><button class="new-file" value=%s>' \
-                     '<i class="material-icons">&#xE02C;</i>%s</button> ' \
-                     '</td>\n' % (esc_file, get_file)
+        files_str += '<td><i class="material-icons">&#xE02C;</i>%s' \
+                     '<button class="new-file" value=%s>open</button> ' \
+                     '</td>\n' % (get_file, esc_file)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
                            filename=filename,
@@ -91,6 +91,8 @@ def file_message(message):
     except SystemError:
         player.load(playing)
 
+    new_file = message.replace('///', '\ ')
+    print(new_file)
 
 @socketio.on('disconnect', namespace='/omxSock')
 def test_disconnect():
