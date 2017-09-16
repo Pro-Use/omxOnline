@@ -56,6 +56,12 @@ def setup():
     print files
     if len(files) > 1 and sync:
         print('\ncannot sync multiple files, looping %s\n' % files[0])
+    config_file = '/home/pi/.omxOnline.config'
+    if os.path.isfile(config_file):
+        with open(config_file, 'r') as config:
+            for line in config:
+                if 'FILE' in line:
+                    [files] = line.remove('FILE ')
     player = None
     for media_file in files:
         print media_file

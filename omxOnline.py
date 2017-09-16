@@ -8,6 +8,7 @@ from threading import Lock
 import glob
 from dbus import DBusException
 from omxplayer import OMXPlayer
+import os
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -20,6 +21,7 @@ duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
 filename = player.get_filename().split('/')[-1]
 paused = False
 deviation = False
+config_file = '/home/pi/.omxOnline.config'
 
 
 def position_thread():
@@ -41,6 +43,12 @@ def position_thread():
                           namespace='/omxSock')
         except DBusException:
             pass
+
+
+def write_config(arg, value):
+    if os.path.isfile(config_file):
+        with open(config_file, 'w') as config:
+            config.write('%s %s\n' % (arg, value))
 
 
 @app.route('/')
@@ -120,6 +128,7 @@ def file_message(message):
     duration_percent = 100 / duration
     duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
     filename = player.get_filename().split('/')[-1]
+    write_config('FILE', new_file)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
