@@ -76,7 +76,7 @@ def setup():
                 print(msg)
                 files.remove(media_file)
         else:
-            print("'audio' or 'video' not in %s" % mime_type[0])
+            print("'audio' or 'video' not in %s for %s" % (mime_type[0], media_file))
             files.remove(media_file)
     if player is None:
         print('\nNo video to play in specified directory\n')
