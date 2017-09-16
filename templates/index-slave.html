@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--BODY BLOCK-->
+    <p class='title'>Sync Master:<span id="filename"></span></p><br>
+    <div id="progress-wrapper">
+        <div style="height:50px;background-color:#2196F2" id="progress_bar"></div>
+    </div>
+
+    <div id="ctl-buttons">
+        <span class="ctl-button" id="play_pause"> <i class="material-icons">&#xE034;</i></span>
+        <p>Deviation from master:<span id="deviation"></span> seconds</p>
+        <p class="position"><span id="position"></span> / <span id="duration_str"></span></p>
+    </div>
+
+    <div id="file-buttons">
+        <button class="sub-button" value="file-menu"><i class="material-icons">&#xE2C7;</i></button>
+    </div>
+    <div id="console-button">
+        <button class="sub-button" value="console"><i class="material-icons">&#xE002;</i></button>
+    </div>
+    <div id="power-button">
+        <button class="sub-button" value="power-menu"> <i class="material-icons">&#xE8AC;</i></button>
+    </div>
+    <br>
+<!--sub-menus-->
+    <div id="file-menu" class="sub-menu">
+        <table>
+                {{ files }}
+        </table>
+    </div>
+    <div id="console"  class="sub-menu">
+        <table>
+        </table>
+    </div>
+    <div id="power-menu"  class="sub-menu">
+        <table>
+            <tr>
+                <td><button class="ctl-button" value="power_off"><i class="material-icons">&#xE8AC;</i></button>
+                <button class="ctl-button" value="restart"><i class="material-icons">&#xE8BA;</i></button></td>
+            </tr>
+        </table>
+    </div>
+<!--END BODY-->
+{% endblock %}

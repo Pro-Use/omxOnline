@@ -79,5 +79,4 @@ def setup():
         sync_ctl = Receiver(player, verbose=True)
     elif sync == 'master':
         sync_ctl = Broadcaster(player, interval=0.5, verbose=True)
-    print('%s is sync control' % sync_ctl)
     return directory, files, sync, audio, player, sync_ctl

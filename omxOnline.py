@@ -19,18 +19,22 @@ duration_percent = 100 / duration
 duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
 filename = player.get_filename().split('/')[-1]
 paused = False
+deviation = None
 
 
 def position_thread():
     while True:
         try:
+            global deviation
             socketio.sleep(1)
             pos = player.position()
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
+            if sync == 'slave':
+                deviation = sync_ctl.deviation()
             socketio.emit('position',
                           {'position': pos, 'duration': duration, 'duration_str': duration_str,
-                           'percentage': percentage, 'paused': paused, 'filename': filename},
+                           'percentage': percentage, 'paused': paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
         except DBusException:
             pass
