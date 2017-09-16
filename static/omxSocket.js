@@ -2,6 +2,8 @@ $(document).ready(function() {
     namespace = '/omxSock';
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
     var paused = false
+    var duration = ''
+    var filename = ''
     var new_file = ''
 
     socket.on('connect', function() {
@@ -14,6 +16,14 @@ $(document).ready(function() {
         var bar_width = ($( document ).width() / 100) * msg.percentage
         // console.log(bar_width);
         $('#progress_bar').width(bar_width);
+        if (msg.duration != duration) {
+            duration = msg.duration
+            $('#duration').html(duration);
+        }
+        if (msg.filename != filename) {
+            filename = msg.filename
+            $('#filename').html(filename);
+        }
         if (paused != msg.paused) {
             console.log('paused = ' + msg.paused)
             paused = msg.paused

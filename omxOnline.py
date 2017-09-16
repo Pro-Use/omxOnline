@@ -29,7 +29,8 @@ def position_thread():
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             socketio.emit('position',
-                          {'position': pos, 'percentage': percentage, 'paused': paused},
+                          {'position': pos, 'duration': duration_str, 'percentage': percentage, 'paused': paused,
+                           'filename': filename},
                           namespace='/omxSock')
         except DBusException:
             pass
@@ -46,8 +47,6 @@ def index():
                      '</td>\n' % (get_file, esc_file)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
-                           filename=filename,
-                           duration=duration_str,
                            files=files_html)
 
 
@@ -86,7 +85,7 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    global player
+    global player, duration, duration_percent, duration_str, filename
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
@@ -94,6 +93,10 @@ def file_message(message):
         player.load(new_file)
     except SystemError:
         player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
+    duration = player.duration()
+    duration_percent = 100 / duration
+    duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
+    filename = player.get_filename().split('/')[-1]
 
 
 @socketio.on('disconnect', namespace='/omxSock')
