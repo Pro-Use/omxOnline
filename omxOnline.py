@@ -7,6 +7,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room, \
 from threading import Lock
 import glob
 from dbus import DBusException
+from omxplayer import OMXPlayer
 
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
@@ -85,13 +86,14 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
+    global player
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
     try:
         player.load(new_file)
     except SystemError:
-        player.load(playing)
+        player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
 
 
 @socketio.on('disconnect', namespace='/omxSock')
