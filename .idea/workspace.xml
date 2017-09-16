@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/argParser.py" afterPath="$PROJECT_DIR$/argParser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omxOnline.py" afterPath="$PROJECT_DIR$/omxOnline.py" />
     </list>
     <ignored path="omxOnline.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="argParser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="argParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/argParser.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="674">
@@ -58,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
@@ -358,13 +356,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add percentage">
-      <created>1505340525162</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1505340525162</updated>
     </task>
     <task id="LOCAL-00025" summary="add progress bar">
       <created>1505340757111</created>
@@ -702,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505472178747</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="handle file errors">
+      <created>1505571288327</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1505571288327</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -740,7 +738,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Run Flask Server" />
     <MESSAGE value="Add object to page" />
     <MESSAGE value="escape filenames" />
     <MESSAGE value="Add duration object" />
@@ -765,7 +762,8 @@
     <MESSAGE value="add files list" />
     <MESSAGE value="add file link" />
     <MESSAGE value="add file link function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add file link function" />
+    <MESSAGE value="handle file errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle file errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -985,21 +983,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/argParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,12 +1011,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/argParser.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+        <state relative-caret-position="72">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
