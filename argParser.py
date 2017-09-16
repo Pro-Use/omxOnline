@@ -61,13 +61,13 @@ def setup():
         with open(config_file, 'r') as config:
             for line in config:
                 if 'FILE' in line:
-                    print(line)
                     files = [line.replace('FILE ', '')]
     player = None
     for media_file in files:
         print media_file
         # esc_media_file = media_file
         mime_type = guess_type(str(media_file))
+        print mime_type
         if any(f in str(mime_type[0]) for f in ['audio', 'video']):
             try:
                 player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'])
