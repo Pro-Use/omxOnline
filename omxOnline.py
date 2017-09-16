@@ -41,10 +41,14 @@ def index():
     files_str = ''
     get_files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     for get_file in get_files:
+        if get_file == player.get_filename():
+            class_str = 'not-playing'
+        else:
+            class_str = 'playing'
         esc_file = get_file.replace(' ', '///')
-        files_str += '<tr><td><i class="material-icons">&#xE02C;</i>%s' \
-                     '<button class="new-file" value=%s>open</button> ' \
-                     '</td></tr>\n' % (get_file, esc_file)
+        files_str += '<tr><td class=%s><button class="new-file" value=%s>' \
+                     '<i class="material-icons">&#xE02C;</i>%s' \
+                     '</button></td></tr>\n' % (class_str, esc_file, get_file)
     files_html = Markup(files_str)
     return render_template('index.html', async_mode=socketio.async_mode,
                            files=files_html)

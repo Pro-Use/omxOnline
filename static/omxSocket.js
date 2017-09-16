@@ -89,7 +89,7 @@ $(document).ready(function() {
     $('#progress-wrapper'). mouseleave(function() {
         $('#marker').css('left', '-3px');
         $('#marker-pos').css('left', '-3px');
-        $('#marker-pos').text('00:00:00');
+        $('#marker-pos').text('');
     });
 
  });

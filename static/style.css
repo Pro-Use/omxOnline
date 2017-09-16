@@ -14,7 +14,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 45px;  /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -54,4 +54,9 @@
     top: -100px;
     padding-left: 10px;
     width: 100px
+}
+
+button.clt-button {
+    background-color: white;
+    border: none;
 }
