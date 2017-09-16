@@ -61,15 +61,18 @@ $(document).ready(function() {
     });
 
     $('#progress-wrapper'). mousemove(function(e) {
-        $('#marker').css('left', (e.pageX - 6) + 'px');
-        $('#marker-pos').css('left', (e.pageX - 6) + 'px');
-        $('#marker-pos').text(convertTime(e.pageX));
+        mouseX = e.pageX;
+        $('#marker').css('left', (mouseX - 6) + 'px');
+        $('#marker-pos').css('left', (mouseX - 6) + 'px');
+        timeStamp = convertTime(mouseX);
+        console.log(timeStamp);
+        $('#marker-pos').text(timeStamp);
     });
 
     $('#progress-wrapper'). mouseleave(function() {
         $('#marker').css('left', '-3px');
         $('#marker-pos').css('left', '-3px');
-        $('#marker-pos').text('');
+        $('#marker-pos').text('00:00:00');
     });
 
  });

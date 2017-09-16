@@ -4,8 +4,6 @@
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/omxSocket.js" afterPath="$PROJECT_DIR$/static/omxSocket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/style.css" afterPath="$PROJECT_DIR$/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="omxOnline.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -82,8 +80,8 @@
       <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="710">
+              <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -367,13 +365,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00050" summary="update ctl buttons">
-      <created>1505391106600</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1505391106607</updated>
     </task>
     <task id="LOCAL-00051" summary="update ctl buttons">
       <created>1505391261755</created>
@@ -711,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505581197421</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="convert seconds to timestamp in jquery">
+      <created>1505582187821</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1505582187821</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -749,7 +747,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add jquery socket" />
     <MESSAGE value="add omxSocket.js" />
     <MESSAGE value="Fix socket" />
     <MESSAGE value="omxplayer autoplay" />
@@ -774,7 +771,8 @@
     <MESSAGE value="handle connections" />
     <MESSAGE value="get pointer pos over progress bar" />
     <MESSAGE value="add marker over progress bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add marker over progress bar" />
+    <MESSAGE value="convert seconds to timestamp in jquery" />
+    <option name="LAST_COMMIT_MESSAGE" value="convert seconds to timestamp in jquery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1029,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        <state relative-caret-position="710">
+          <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
           <folding />
         </state>
       </provider>
