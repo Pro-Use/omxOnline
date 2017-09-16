@@ -62,7 +62,7 @@ def setup():
             for line in config:
                 if 'FILE' in line:
                     print(line)
-                    files = [line.replace('FILE\ ', '')]
+                    files = [line.replace('FILE ', '')]
     player = None
     for media_file in files:
         print media_file
