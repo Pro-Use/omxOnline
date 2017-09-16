@@ -66,11 +66,11 @@ $(document).ready(function() {
     });
 
     $('.sub-button').click(function() {
-        console.log($(this).val())
-        was-open = $(".sub-menu").css('display')
-        $(".sub-menu").css('display', 'none')
+        console.log($(this).val());
+        was-open = $(".sub-menu").css( "display" );
+        $(".sub-menu").css('display', 'none');
         if (was-open == 'none') {
-            $("#" + $(this).val()).css('display', 'block')
+            $("#" + $(this).val()).css('display', 'block');
         }
         return false;
     });
