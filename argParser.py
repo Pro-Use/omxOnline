@@ -6,6 +6,7 @@ from re import escape
 from omxplayer import OMXPlayer
 from mimetypes import guess_type
 
+
 def setup():
     directory = "/home/pi/video/"
     files = glob.glob(directory + '[a-zA-Z0-9]*.*')
