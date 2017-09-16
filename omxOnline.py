@@ -25,17 +25,19 @@ deviation = False
 def position_thread():
     while True:
         try:
-            global deviation, paused
+            global deviation
             socketio.sleep(1)
             pos = player.position()
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             if sync == 'slave':
-                deviation = sync_ctl.deviation
-                paused = not paused
+                deviation = '%.2f' % sync_ctl.median_deviation
+                is_paused = not paused
+            else:
+                is_paused = paused
             socketio.emit('position',
                           {'position': pos, 'duration': duration, 'duration_str': duration_str,
-                           'percentage': percentage, 'paused': paused, 'filename': filename, 'deviation': deviation},
+                           'percentage': percentage, 'paused': is_paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
         except DBusException:
             pass
