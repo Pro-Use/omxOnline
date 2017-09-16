@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d9e18d9-cf34-4c94-b465-a9faed2a9300" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/omxOnline.py" afterPath="$PROJECT_DIR$/omxOnline.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/omxSocket.js" afterPath="$PROJECT_DIR$/static/omxSocket.js" />
     </list>
     <ignored path="omxOnline.iws" />
@@ -24,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="omxOnline.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/omxOnline.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="754">
@@ -78,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="omxSocket.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+            <state relative-caret-position="331">
+              <caret line="70" column="51" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -108,8 +107,8 @@
         <option value="$PROJECT_DIR$/argParser.py" />
         <option value="$PROJECT_DIR$/static/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/static/omxSocket.js" />
         <option value="$PROJECT_DIR$/omxOnline.py" />
+        <option value="$PROJECT_DIR$/static/omxSocket.js" />
       </list>
     </option>
   </component>
@@ -366,13 +365,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505152081678</updated>
-    </task>
-    <task id="LOCAL-00057" summary="add skip button functions">
-      <created>1505393876120</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1505393876120</updated>
     </task>
     <task id="LOCAL-00058" summary="add skip button functions">
       <created>1505393959321</created>
@@ -710,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505584960892</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Add click event for progress bar">
+      <created>1505585389444</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1505585389444</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1008,6 +1007,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/omxOnline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
@@ -1018,19 +1027,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/omxSocket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+        <state relative-caret-position="331">
+          <caret line="70" column="51" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omxOnline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

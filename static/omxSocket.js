@@ -68,7 +68,7 @@ $(document).ready(function() {
     $('#progress-wrapper').mousemove(function(e) {
         mouseX = e.pageX;
         if (mouseX > $('#progress-wrapper').width() / 2) {
-            $('#marker-pos').css('margin-left', '-80px');
+            $('#marker-pos').css('margin-left', '-90px');
         } else {
             $('#marker-pos').css('margin-left', '10px');
         }
