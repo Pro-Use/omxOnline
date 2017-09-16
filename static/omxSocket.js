@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     $('#progress-wrapper'). mousemove(function(e) {
         console.log(e.pageX);
-        $('#marker').css('left', e.pageX + 'px');
+        $('#marker').css('left', (e.pageX - 6) + 'px');
     });
 
     $('#progress-wrapper'). mouseleave(function() {
