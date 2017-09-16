@@ -56,9 +56,17 @@
     width: 100px
 }
 
-button.clt-button, button.new-file {
+button.clt-button, button.new-file, button.folder-button, button.usb-button, button.console-button {
     background: none;
     border: none;
+}
+
+div#file-buttons, div#console-button, div#power-button {
+    float: left;
+}
+
+br {
+    clear: both;
 }
 
 td.not-playing {
@@ -67,4 +75,9 @@ td.not-playing {
 
 td.playing {
     border-bottom-color: #9a9a9a;
+}
+
+p.position {
+    float: right;
+    padding-right: 10px;
 }
