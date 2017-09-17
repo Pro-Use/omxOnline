@@ -157,8 +157,8 @@ def file_message(message):
     if sync is not None:
         if sync == 'slave':
             sync_ctl.duration_match = None
-            sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
-            sync_ctl_thread.start()
+        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
+        sync_ctl_thread.start()
     sync_pause.clear()
 
 
