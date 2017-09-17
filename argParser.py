@@ -85,5 +85,5 @@ def setup():
     if sync == 'slave':
         sync_ctl = Receiver(player, verbose=False, background=False)
     elif sync == 'master':
-        sync_ctl = Broadcaster(player, interval=0.5, verbose=True, background=False)
+        sync_ctl = Broadcaster(player, interval=0.5, verbose=False, background=False)
     return directory, files, sync, audio, player, sync_ctl
