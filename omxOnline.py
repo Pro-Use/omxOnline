@@ -164,7 +164,7 @@ def file_message(message):
 
 if __name__ == '__main__':
     if sync is not None:
-        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
+        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause])
         sync_ctl_thread.start()
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
     sync_pause.set()
