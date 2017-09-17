@@ -35,7 +35,6 @@ def sync_thread(e, ctl):
         except DBusException:
             pass
     print('syncing stopped')
-    ctl.socket.close()
 
 
 def position_thread():
