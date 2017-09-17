@@ -28,25 +28,26 @@ sync_pause = Event()
 
 
 def sync_thread(e, ctl):
+    global deviation
     print('syncing started')
     while not e.isSet():
         try:
             ctl.update()
+            deviation = '%.2f' % sync_ctl.median_deviation
         except DBusException:
             pass
     print('syncing stopped')
+    deviation = 'Not in sync'
 
 
 def position_thread():
     while True:
         try:
-            global deviation
             socketio.sleep(1)
             pos = player.position()
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             if sync == 'slave':
-                deviation = '%.2f' % sync_ctl.median_deviation
                 is_paused = not paused
             else:
                 is_paused = paused
@@ -135,9 +136,8 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    global player, duration, duration_percent, duration_str, filename, sync_ctl, sync_ctl_thread, deviation
+    global player, duration, duration_percent, duration_str, filename, sync_ctl, sync_ctl_thread
     sync_pause.set()
-    deviation = 'Not in sync'
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
