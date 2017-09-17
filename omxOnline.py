@@ -33,7 +33,7 @@ def sync_thread(e, ctl):
     while not e.isSet():
         try:
             ctl.update()
-            deviation = '%.2f' % sync_ctl.median_deviation
+            deviation = '%.2f seconds' % sync_ctl.median_deviation
         except DBusException:
             pass
     print('syncing stopped')
