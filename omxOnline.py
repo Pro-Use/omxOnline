@@ -27,17 +27,12 @@ sync_ctl_thread = None
 sync_pause = Event()
 
 
-def sync_thread(e, ctl):
+def sync_thread(e):
     global deviation
     print('syncing started')
     while not e.isSet():
         try:
-            ctl.update()
-            if sync == 'slave':
-                if ctl.duration_match is True:
-                    deviation = '%.2f seconds' % ctl.median_deviation
-                else:
-                    deviation = 'Master/Slave durations do not match'
+            sync_ctl.update()
         except DBusException:
             pass
     print('syncing stopped')
@@ -45,6 +40,7 @@ def sync_thread(e, ctl):
 
 
 def position_thread():
+    global deviation
     while True:
         try:
             socketio.sleep(1)
@@ -52,6 +48,10 @@ def position_thread():
             percentage = duration_percent * pos
             pos = time.strftime('%H:%M:%S', time.gmtime(pos))
             if sync == 'slave':
+                if sync_ctl.duration_match is True:
+                    deviation = '%.2f seconds' % sync_ctl.median_deviation
+                else:
+                    deviation = 'Master/Slave durations do not match'
                 is_paused = not paused
             else:
                 is_paused = paused
