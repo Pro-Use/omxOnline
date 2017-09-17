@@ -135,8 +135,9 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    global player, duration, duration_percent, duration_str, filename, sync_ctl, sync_ctl_thread
+    global player, duration, duration_percent, duration_str, filename, sync_ctl, sync_ctl_thread, deviation
     sync_pause.set()
+    deviation = 'Not in sync'
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
@@ -162,4 +163,6 @@ if __name__ == '__main__':
         sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
         sync_ctl_thread.start()
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
+    sync_pause.set()
+    sync_ctl.socket.close()
     player.stop()
