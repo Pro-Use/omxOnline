@@ -83,7 +83,7 @@ def setup():
         sys.exit(2)
     sync_ctl = None
     if sync == 'slave':
-        sync_ctl = Receiver(player, verbose=True)
+        sync_ctl = Receiver(player, verbose=True, background=False)
     elif sync == 'master':
-        sync_ctl = Broadcaster(player, interval=0.5, verbose=False)
+        sync_ctl = Broadcaster(player, interval=0.5, verbose=False, background=False)
     return directory, files, sync, audio, player, sync_ctl

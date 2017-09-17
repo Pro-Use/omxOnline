@@ -4,7 +4,7 @@ from argParser import setup
 from flask import Flask, render_template, session, request, jsonify, abort, Markup
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
     close_room, rooms, disconnect
-from threading import Lock
+from threading import Lock, Event, Thread
 import glob
 from dbus import DBusException
 from omxplayer import OMXPlayer
@@ -23,6 +23,19 @@ filename = player.get_filename().split('/')[-1]
 paused = False
 deviation = False
 config_file = '/home/pi/.omxOnline.config'
+sync_ctl_thread = None
+sync_pause = Event()
+
+
+def sync_thread(e, ctl):
+    print('syncing started')
+    while not e.isSet():
+        try:
+            ctl.update()
+        except DBusException:
+            pass
+    print('syncing stopped')
+    ctl.socket.close()
 
 
 def position_thread():
@@ -123,7 +136,8 @@ def ctl_message(message):
 
 @socketio.on('file_event', namespace='/omxSock')
 def file_message(message):
-    global player, duration, duration_percent, duration_str, filename, sync_ctl
+    global player, duration, duration_percent, duration_str, filename, sync_ctl, sync_ctl_thread
+    sync_pause.set()
     new_file = message.replace('///', ' ')
     print(new_file)
     playing = player.get_filename()
@@ -131,18 +145,22 @@ def file_message(message):
         player.load(new_file)
     except SystemError:
         player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
-    # sync_ctl.destroy()
-    # if sync is not None:
-    #     if sync == 'slave':
-    #         sync_ctl = Receiver(player, verbose=False)
-    #     elif sync == 'master':
-    #         sync_ctl = Broadcaster(player, interval=0.5, verbose=False)
     duration = player.duration()
     duration_percent = 100 / duration
     duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
     filename = player.get_filename().split('/')[-1]
     write_config('FILE', new_file)
+    if sync is not None:
+        if sync == 'slave':
+            sync_ctl.duration_match = None
+            sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
+            sync_ctl_thread.start()
+    sync_pause.clear()
+
 
 if __name__ == '__main__':
+    if sync is not None:
+        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
+        sync_ctl_thread.start()
     socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
     player.stop()

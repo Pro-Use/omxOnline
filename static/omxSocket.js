@@ -100,7 +100,7 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#progress-wrapper'). mouseleave(function() {
+    $('#progress-wrapper').mouseleave(function() {
         $('#marker').css('left', '-3px');
         $('#marker-pos').css('left', '-3px');
         $('#marker-pos').text('');
