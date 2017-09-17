@@ -33,10 +33,11 @@ def sync_thread(e, ctl):
     while not e.isSet():
         try:
             ctl.update()
-            if ctl.duration_match is True:
-                deviation = '%.2f seconds' % ctl.median_deviation
-            else:
-                deviation = 'Master/Slave durations do not match'
+            if sync == 'slave':
+                if ctl.duration_match is True:
+                    deviation = '%.2f seconds' % ctl.median_deviation
+                else:
+                    deviation = 'Master/Slave durations do not match'
         except DBusException:
             pass
     print('syncing stopped')
