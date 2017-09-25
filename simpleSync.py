@@ -46,7 +46,7 @@ for opt, arg in opts:
         audio = arg
 
 if sync == 'slave':
-    player = OMXPlayer(video_file, args=['-o', audio, '--no-osd', '--loop'], pause=True)
+    player = OMXPlayer(video_file, args=['-o', audio, '--no-osd', '--loop'])
     receiver = Receiver(player, verbose=True)
 else:
     player = OMXPlayer(video_file, args=['-o', 'local', '--no-osd', '--loop'])
