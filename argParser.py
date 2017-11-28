@@ -12,15 +12,17 @@ def setup():
     files = glob.glob(directory + '[a-zA-Z0-9]*.*')
     sync = None
     audio = 'local'
+    paused = False
     helpstr = '\nomxOnline usage:\n \
         -h print this help message and exit\n \
         -f <file>               full path\n \
         -d <directory> \n \
         -s [master | slave]     sync mode\n \
-        -o [local | hdmi | alsa]    audio output\n'
+        -o [local | hdmi | alsa]    audio output\n \
+        -p <start paused>\n'
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hf:d:s:o:")
+        opts, args = getopt.getopt(sys.argv[1:], "hf:d:s:o:p")
     except getopt.GetoptError:
         print(helpstr)
         sys.exit(2)
@@ -52,6 +54,8 @@ def setup():
                 print('\n"%s" is not a valid audio output, must be either "local", "hdmi" or "alsa"\n' % arg)
                 sys.exit(2)
             audio = arg
+        elif opt == '-p':
+            paused = True
     files.sort()
     print files
     config_file = '/home/pi/.omxOnline.config'
@@ -70,7 +74,7 @@ def setup():
         print mime_type
         if any(f in str(mime_type[0]) for f in ['audio', 'video']):
             try:
-                player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'])
+                player = OMXPlayer(media_file, args=['-o', audio, '--no-osd', '--loop'], pause=paused)
                 break
             except SystemError, msg:
                 print(msg)
