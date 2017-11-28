@@ -20,9 +20,16 @@ def setup():
         -s [master | slave]     sync mode\n \
         -o [local | hdmi | alsa]    audio output\n \
         -p <start paused>\n'
-
+    config_file = '/boot/omxOnline.config'
+    if os.path.isfile(config_file):
+        with open(config_file, 'r') as config:
+            for line in config:
+                if '#' not in line:
+                    options = line.replace('\n', '').split()
+    else:
+        options = sys.argv[1:]
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hf:d:s:o:p")
+        opts, args = getopt.getopt(options, "hf:d:s:o:p")
     except getopt.GetoptError:
         print(helpstr)
         sys.exit(2)
@@ -58,12 +65,6 @@ def setup():
             paused = True
     files.sort()
     print files
-    config_file = '/home/pi/.omxOnline.config'
-    if os.path.isfile(config_file):
-        with open(config_file, 'r') as config:
-            for line in config:
-                if 'FILE' in line:
-                    files = [line.replace('\n', '').replace('FILE ', '')]
     if len(files) > 1 and sync:
         print('\ncannot sync multiple files, looping %s\n' % files[0])
     player = None
