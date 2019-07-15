@@ -1,17 +1,16 @@
 
 import time
 from argParser import setup
-from flask import Flask, render_template, session, request, jsonify, abort, Markup
-from flask_socketio import SocketIO, emit, join_room, leave_room, \
-    close_room, rooms, disconnect
+from flask import Flask, render_template, Markup, flash
+from flask_socketio import SocketIO
 from threading import Lock, Event, Thread
 import glob
 from dbus import DBusException
-from omxplayer import OMXPlayer
-from omxsync import Receiver, Broadcaster
+from omxplayer import player as PLAYER
 from subprocess import call
 
 app = Flask(__name__)
+app.secret_key = b')\x9c\xc7\xa7\xb3\xd2\xa9\x8ch\xd6\xc9\xfc\xe6g!c'
 socketio = SocketIO(app, async_mode='eventlet')
 thread = None
 thread_lock = Lock()
@@ -36,7 +35,8 @@ def sync_thread(e):
         except DBusException:
             pass
     print('syncing stopped')
-    deviation = 'Not in sync'
+    if sync == 'slave':
+        deviation = 'Not syncing'
 
 
 def position_thread():
@@ -60,6 +60,9 @@ def position_thread():
                            'percentage': percentage, 'paused': is_paused, 'filename': filename, 'deviation': deviation},
                           namespace='/omxSock')
         except DBusException, msg:
+            print(msg)
+            pass
+        except PLAYER.OMXPlayerDeadError, msg:
             print(msg)
             pass
 
@@ -148,18 +151,20 @@ def file_message(message):
     try:
         player.load(new_file)
     except SystemError:
-        player = OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
+        player = PLAYER.OMXPlayer(playing, args=['-o', audio, '--no-osd', '--loop'])
+        time.sleep(1)
     duration = player.duration()
     duration_percent = 100 / duration
     duration_str = time.strftime('%H:%M:%S', time.gmtime(duration))
     filename = player.get_filename().split('/')[-1]
-    write_config('FILE', new_file)
+    write_config('FILE', filename)
     if sync is not None:
         if sync == 'slave':
             sync_ctl.duration_match = None
-        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause, sync_ctl])
+        sync_ctl_thread = Thread(target=sync_thread, args=[sync_pause])
         sync_ctl_thread.start()
     sync_pause.clear()
+    return filename
 
 
 if __name__ == '__main__':

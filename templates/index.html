@@ -30,6 +30,15 @@
         <table>
                 {{ files }}
         </table>
+
+        <form action="{{ url_for('index') }}" method=POST enctype=multipart/form-data>
+        <dl>
+        <dt>File
+            <dd><input type=file name=video>
+        </dl>
+        <p><input type=submit value=Post>
+        </form>
+
     </div>
     <div id="console"  class="sub-menu">
         <table>

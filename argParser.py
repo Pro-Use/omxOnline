@@ -19,6 +19,7 @@ def setup():
         -d <directory> \n \
         -s [master | slave]     sync mode\n \
         -o [local | hdmi | alsa]    audio output\n \
+        -i [wired | wifi]      network interface\n \
         -p <start paused>\n'
     config_file = '/boot/omxOnline.config'
     if os.path.isfile(config_file):
@@ -29,7 +30,7 @@ def setup():
     else:
         options = sys.argv[1:]
     try:
-        opts, args = getopt.getopt(options, "hf:d:s:o:p")
+        opts, args = getopt.getopt(options, "hf:d:s:o:i:p")
     except getopt.GetoptError:
         print(helpstr)
         sys.exit(2)
@@ -61,6 +62,11 @@ def setup():
                 print('\n"%s" is not a valid audio output, must be either "local", "hdmi" or "alsa"\n' % arg)
                 sys.exit(2)
             audio = arg
+        elif opt == '-i':
+            if arg not in ['wired', 'wifi']:
+                print('\n"%s" is not a valid network interface, must be either "wired" or "wifi"\n' % arg)
+                sys.exit(2)
+            network = arg
         elif opt == '-p':
             paused = True
     files.sort()
@@ -88,7 +94,7 @@ def setup():
         sys.exit(2)
     sync_ctl = None
     if sync == 'slave':
-        sync_ctl = Receiver(player, verbose=False, background=False)
+        sync_ctl = Receiver(player, verbose=False, background=False, interface=network)
     elif sync == 'master':
-        sync_ctl = Broadcaster(player, interval=0.5, verbose=False, background=False)
+        sync_ctl = Broadcaster(player, interval=0.5, verbose=False, background=False, interface=network)
     return directory, files, sync, audio, player, sync_ctl
