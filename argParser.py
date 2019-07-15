@@ -13,6 +13,7 @@ def setup():
     sync = None
     audio = 'local'
     paused = False
+    network = None
     helpstr = '\nomxOnline usage:\n \
         -h print this help message and exit\n \
         -f <file>               full path\n \
