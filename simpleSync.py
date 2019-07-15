@@ -19,10 +19,10 @@ helpstr = '\nomxOnline usage:\n \
         -f <file>               full path\n \
         -s [master | slave]     sync mode\n \
         -o [local | hdmi | alsa]    audio output\n \
-        -i [wired | wifi]      network interface\n'
+        -i [device name]      network interface, e.g. "eth0"\n'
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "hf:s:o:i")
+    opts, args = getopt.getopt(sys.argv[1:], "hf:s:o:i:")
 except getopt.GetoptError:
     print(helpstr)
     sys.exit(2)
@@ -46,8 +46,9 @@ for opt, arg in opts:
             sys.exit(2)
         audio = arg
     elif opt == '-i':
-        if arg not in ['wired', 'wifi']:
-            print('\n"%s" is not a valid network interface, must be either "wired" or "wifi"\n' % arg)
+        interfaces = os.listdir('/sys/class/net/')
+        if arg not in interfaces:
+            print('\n"%s" is not a valid network interface, must be in %s\n' % (arg, interfaces))
             sys.exit(2)
         network = arg
 

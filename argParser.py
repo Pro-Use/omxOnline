@@ -19,7 +19,7 @@ def setup():
         -d <directory> \n \
         -s [master | slave]     sync mode\n \
         -o [local | hdmi | alsa]    audio output\n \
-        -i [wired | wifi]      network interface\n \
+        -i [device name]      network interface, e.g. "eth0"\n \
         -p <start paused>\n'
     config_file = '/boot/omxOnline.config'
     if os.path.isfile(config_file):
@@ -63,8 +63,9 @@ def setup():
                 sys.exit(2)
             audio = arg
         elif opt == '-i':
-            if arg not in ['wired', 'wifi']:
-                print('\n"%s" is not a valid network interface, must be either "wired" or "wifi"\n' % arg)
+            interfaces = os.listdir('/sys/class/net/')
+            if arg not in interfaces:
+                print('\n"%s" is not a valid network interface, must be in %s\n' % (arg, interfaces))
                 sys.exit(2)
             network = arg
         elif opt == '-p':
