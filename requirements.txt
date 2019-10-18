@@ -8,7 +8,7 @@ dbus-python==1.2.4
 decorator==4.0.10
 enum34==1.1.6
 evento==1.0.1
-Flask==0.12.2
+Flask==1.0
 Flask-SocketIO==2.9.2
 gevent==1.2.2
 greenlet==0.4.12
