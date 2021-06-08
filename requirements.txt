@@ -24,7 +24,7 @@ omxplayer-wrapper==0.2.3
 -e git+https://github.com/Pro-Use/pyOmxSync.git@ab92c9d2f76f821a15f5d742f589aa72bccc758b#egg=omxsync
 pexpect==4.2.0
 pi3d==2.13
-Pillow==3.3.1
+Pillow==8.2.0
 ptyprocess==0.5.1
 pyasn1==0.1.7
 pycparser==2.18
