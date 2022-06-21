@@ -19,7 +19,7 @@ itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 ndg-httpsclient==0.3.2
-numpy==1.11.1
+numpy==1.22.0
 omxplayer-wrapper==0.2.3
 -e git+https://github.com/Pro-Use/pyOmxSync.git@ab92c9d2f76f821a15f5d742f589aa72bccc758b#egg=omxsync
 pexpect==4.2.0
